@@ -1,24 +1,10 @@
-# README
+# 無駄遣いチェッカー(仮称)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+本アプリは、プログラミング学習の一環として制作している、Ruby on railsフレームワークを用いた家計簿アプリです。
 
-Things you may want to cover:
+# 本アプリの機能一覧(予定)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ユーザー登録機能(メールアドレス・SNSアカウント)
+- カレンダーを用いた収入・支出の記録
+- 毎月の固定収支の登録機能 
+- 統計機能
