@@ -1,0 +1,52 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* header */
+/* using palette : #7189BF #df7599 #ffc785 #72d6c9 */
+.header-navbar {
+  background-color: #72d6c9; 
+}
+
+header a {
+  color: white;
+  &:hover {
+    color: #72d6c9;
+  }
+}
+
+/* footer */
+.footer-navbar {
+  background-color: #72d6c9; 
+}
+
+footer a {
+  color: white;
+  &:hover {
+    color: #72d6c9;
+  }
+}
+
+/* yield(body) */
+body {
+  padding-top: 70px;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-color: gray;
+  background-blend-mode: multiply;
+}
+
+/* home page */
+.signup-button {
+  background-color: #72d6c9;
+  border-color: #7aeede;
+  color: white;
+  &:hover {
+    background-color: #7aeede;
+    color: white;
+  }
+}
+
+.home-jumbotron {
+  background-color: rgba(50,50,50,0.9);
+  color: white;
+}

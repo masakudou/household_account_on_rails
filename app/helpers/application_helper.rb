@@ -1,2 +1,11 @@
 module ApplicationHelper
+  # Pageごとに適切なタイトルを付けるヘルパーです。
+  def full_title(page_title = "")
+    base_title = "無駄遣いチェッカー"
+    if page_title.empty?
+      base_title
+    else
+      page_title + " | " + base_title
+    end
+  end
 end
