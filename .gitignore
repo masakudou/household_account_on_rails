@@ -23,5 +23,8 @@
 /public/assets
 .byebug_history
 
+# Ignore VSCode Files
+./Rails.code-workspace
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
