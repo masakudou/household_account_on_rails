@@ -1,3 +1,44 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* default tag styles for users */
+.users {
+  padding-top: 0;
+  background-color: #7189BF;
+
+  /* profile page header */
+  .profile-header {
+    background-color: #333333;
+  }
+
+  .header-image {
+    opacity: 0.3;
+  }
+
+  /* profile page sidebar */
+  .profile-sidebar {
+    background-color: #df7599;
+    color: white;
+
+    .profile-icon {
+      margin-top: 16px;
+      padding: 20px;
+
+      .icon-image {
+        border: 4px ridge #ffc785;
+        border-radius: 10px;
+      }
+    }
+
+    .profile-name {
+      font-size: 28px;
+    }
+
+    .profile-created_at {
+      font-size: 18px;
+    }
+  }
+
+  /* profile page information */
+  .profile-information {
+    background-color: #ffc785;
+    color: white;
+  }
+}
