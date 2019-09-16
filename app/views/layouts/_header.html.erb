@@ -1,11 +1,31 @@
 <header class="navbar navbar-dark navbar-fixed-top header-navbar">
   <div class="container">
     <ul class="nav navbar-dark navbar-nav navbar-left">
-      <li class="navlist"><%= link_to "無駄遣いチェッカー(仮称)", "/", class: "header-tohome" %></li>
+      <% if logged_in? %>
+        <li class="navlist"><%= link_to "ホーム", @current_user_path, class: "header-tohome" %></li>
+      <% else %>
+        <li class="navlist"><%= link_to "無駄遣いチェッカー(仮称)", "/", class: "header-tohome" %></li>
+      <% end %>
     </ul>
     <ul class="nav navbar-dark navbar-nav navbar-right">
-      <li class="navlist"><p class="navbar-text welcome-text">ようこそ。 ゲスト さん</p></li>
-      <li class="navlist"><%= link_to "ログイン", "/login" %></li>
+      <% if logged_in? %>
+        <li class="navlist dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            ようこそ。 <%= @current_user.name %> さん <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "プロフィール", current_user %></li>
+            <li><%= link_to "設定", '#' %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "ログアウト", logout_path, method: :delete %>
+            </li>
+          </ul>
+        </li>
+      <% else %>
+        <li class="navlist"><p class="navbar-text welcome-text">ようこそ。 ゲスト さん</p></li>
+        <li class="navlist"><%= link_to "ログイン", "/login", class: "header-tohome" %></li>
+      <% end %>
     </ul>
   </div>
 </header>
