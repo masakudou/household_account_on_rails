@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user.img = "default_img.png"
     @user.header_image = "default_header_image.png"
     if @user.save
+      log_in @user
       flash[:success] = "ようこそ！ #{@user.name}さん！"
       redirect_to @user
     else
