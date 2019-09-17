@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # users
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
-  resources :users
+  get "/users/:id/settings", to: "users#settings"
+  resources :users, only: [:new, :create, :show, :destroy]
 
   # sessions
   get "/login", to: "sessions#new"
