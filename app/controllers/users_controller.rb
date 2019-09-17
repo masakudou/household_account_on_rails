@@ -20,6 +20,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def settings_edit
+    @user = User.find_by(id: params[:id])
+  end
+
+  def settings_update
+  end
+
+  def images_edit
+    @user = User.find_by(id: params[:id])
+  end
+
+  def images_update
+  end
+
   private
 
   def user_params

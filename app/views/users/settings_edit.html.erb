@@ -1,0 +1,33 @@
+<% provide(:title, "基本情報の変更") %>
+<div class="settings-title">
+  基本情報の変更
+</div>
+<div class="row">
+  <div class="col-md-3 settings-sidebar">
+    <div class="standard-settings">
+      <%= link_to "基本情報の変更", "/users/#{@user.id}/settings", class: "settings-edit-link" %>
+    </div>
+    <div class="image-settings">
+      <%= link_to "プロフィール画像の変更", "/users/#{@user.id}/settings/images", class: "images-edit-link" %>
+    </div>
+  </div>
+  <div class="col-md-6 settings-form">
+    <%= form_for(@user, url: "/users/#{@user.id}/settings") do |f| %>
+      <%= render("shared/error_messages") %>
+
+      <%= f.label :name, "ユーザーID"%>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.label :password_confirmation, "パスワードの確認" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+
+      <%= f.submit "設定の変更", class: "btn settings-update-button" %>
+    <% end %>
+  </div>
+</div>
