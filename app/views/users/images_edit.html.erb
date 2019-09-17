@@ -1,0 +1,27 @@
+<% provide(:title, "プロフィール画像の変更") %>
+<div class="image-settings-title">
+  プロフィール画像の変更
+</div>
+<div class="row">
+  <div class="col-md-3 settings-sidebar">
+    <div class="standard-settings">
+      <%= link_to "基本情報の変更", "/users/#{@user.id}/settings", class: "settings-edit-link" %>
+    </div>
+    <div class="image-settings">
+      <%= link_to "プロフィール画像の変更", "/users/#{@user.id}/settings/images", class: "images-edit-link" %>
+    </div>
+  </div>
+  <div class="col-md-6 image-settings-form">
+    <%= form_for(@user, url: "/users/#{@user.id}/settings/images") do |f| %>
+      <%= render("shared/error_messages") %>
+
+      <%= f.label :header_image, "ヘッダー画像"%>
+      <%= f.file_field :header_images, class: "form-control" %>
+
+      <%= f.label :email, "プロフィール画像" %>
+      <%= f.file_field :img, class: "form-control" %>
+
+      <%= f.submit "設定の変更", class: "btn image-settings-update-button" %>
+    <% end %>
+  </div>
+</div>
