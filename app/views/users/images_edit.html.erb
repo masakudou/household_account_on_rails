@@ -16,10 +16,10 @@
       <%= render("shared/error_messages") %>
 
       <%= f.label :header_image, "ヘッダー画像"%>
-      <%= f.file_field, class: "form-control" %>
+      <%= f.file_field :header_images, class: "form-control" %>
 
       <%= f.label :email, "プロフィール画像" %>
-      <%= f.email_field :email, class: "form-control" %>
+      <%= f.file_field :img, class: "form-control" %>
 
       <%= f.submit "設定の変更", class: "btn image-settings-update-button" %>
     <% end %>

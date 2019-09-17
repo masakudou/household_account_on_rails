@@ -1,4 +1,4 @@
-class ImgUploader < CarrierWave::Uploader::Base
+class HeaderImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -14,7 +14,7 @@ class ImgUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "default_img.png"
+    "default_header_image.png"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
