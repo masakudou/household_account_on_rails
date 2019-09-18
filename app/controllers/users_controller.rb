@@ -12,11 +12,11 @@ class UsersController < ApplicationController
     @user.img = "default_img.png"
     @user.header_image = "default_header_image.png"
     if @user.save
-      log_in @user
+      log_in(@user)
       flash[:success] = "ようこそ！ #{@user.name}さん！"
-      redirect_to @user
+      redirect_to(@user)
     else
-      render('new')
+      render("new")
     end
   end
 
@@ -25,6 +25,13 @@ class UsersController < ApplicationController
   end
 
   def settings_update
+    @user = User.find_by(id: params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "基本情報を更新しました。"
+      redirect_to(settings_edit_path(@user))
+    else
+      render("settings_edit")
+    end
   end
 
   def images_edit
