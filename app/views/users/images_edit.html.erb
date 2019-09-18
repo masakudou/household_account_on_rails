@@ -1,5 +1,5 @@
 <% provide(:title, "プロフィール画像の変更") %>
-<div class="image-settings-title">
+<div class="settings-title">
   プロフィール画像の変更
 </div>
 <div class="row">
@@ -16,6 +16,9 @@
 
       <%= f.submit "設定の変更", class: "btn image-settings-update-button" %>
     <% end %>
-    <%= link_to "初期画像に戻す", images_reset_path(@user), class: "btn image-reset-button", method: :post %>
+    <%= link_to "初期画像に戻す", images_reset_path(@user),
+                                class: "btn image-reset-button",
+                                method: :post,
+                                data: {confirm: "画像を初期状態に戻しますか？"} %>
   </div>
 </div>
