@@ -39,11 +39,22 @@ class UsersController < ApplicationController
   end
 
   def images_update
+    @user = User.find_by(id: params[:id])
+    if @user.update_attributes(user_images_params)
+      flash[:success] = "画像を更新しました。"
+      redirect_to(images_edit_path(@user))
+    else
+      render("images_edit")
+    end
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def user_images_params
+    params.require(:user).permit(:img, :header_image)
   end
 end
