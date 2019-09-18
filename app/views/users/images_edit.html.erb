@@ -23,5 +23,6 @@
 
       <%= f.submit "設定の変更", class: "btn image-settings-update-button" %>
     <% end %>
+    <%= link_to "初期画像に戻す", images_reset_path(@user), class: "btn image-reset-button", method: :post %>
   </div>
 </div>

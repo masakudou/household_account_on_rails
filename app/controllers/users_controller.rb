@@ -48,6 +48,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def images_reset
+    @user = User.find_by(id: params[:id])
+    @user.img = "default_img.png"
+    @user.header_image = "default_header_image.png"
+    if @user.save
+      flash[:success] = "画像を初期画像へ戻しました。"
+      redirect_to(images_edit_path(@user))
+    else
+      flash.now[:danger] = "エラーが発生しました。時間をおいてもう一度実行してみてください。"
+      render("images_edit")
+    end
+  end
+
   private
 
   def user_params
