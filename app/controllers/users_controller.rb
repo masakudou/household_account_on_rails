@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
   def settings_edit
     @user = User.find_by(id: params[:id])
+    @settings_class = "active"
+    @images_class = ""
   end
 
   def settings_update
@@ -36,6 +38,8 @@ class UsersController < ApplicationController
 
   def images_edit
     @user = User.find_by(id: params[:id])
+    @settings_class = ""
+    @images_class = "active"
   end
 
   def images_update
