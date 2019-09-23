@@ -64,7 +64,7 @@ RSpec.describe User, type: :model do
                     password: "abcdefgh",
                     password_confirmation: "abcdefgh")
       end
-      let(:email) { "example_2@example.com" }
+      let(:email) { "EXAMPLE_2@example.com" }
 
       it "does not pass." do
         is_expected.to be_falsey
