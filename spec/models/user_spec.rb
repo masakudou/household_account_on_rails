@@ -57,6 +57,20 @@ RSpec.describe User, type: :model do
       end
     end
 
+    context "when email address is already used by other user" do
+      before do
+        User.create(name: "Example_user_2",
+                    email: "example_2@example.com",
+                    password: "abcdefgh",
+                    password_confirmation: "abcdefgh")
+      end
+      let(:email) { "example_2@example.com" }
+
+      it "does not pass." do
+        is_expected.to be_falsey
+      end
+    end
+
     context "when the email address string does not match the regular expression 'REGEX_FOR_VALID_EMAIL'" do
       context "if not including '@'" do
         let(:email) { "example_example.com" }
