@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
   let(:password_confirmation) { "abcdefgh" }
   let(:user) { User.new(name: name, email: email, password: password, password_confirmation: password_confirmation) }
 
-  # ユーザーID、Eメールアドレス、パスワードに問題がない場合、Userモデルのインスタンスが有効になる。
+  # ユーザー名、Eメールアドレス、パスワードに問題がない場合、Userモデルのインスタンスが有効になる。
   describe "An instance of the user model" do
     subject { user.valid? }
 
