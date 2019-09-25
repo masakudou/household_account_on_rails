@@ -29,19 +29,3 @@ footer a {
     color: #72d6c9;
   }
 }
-
-/* home page */
-.signup-button {
-  background-color: #72d6c9;
-  border-color: #7aeede;
-  color: white;
-  &:hover {
-    background-color: #7aeede;
-    color: white;
-  }
-}
-
-.home-jumbotron {
-  background-color: rgba(50,50,50,0.9);
-  color: white;
-}
