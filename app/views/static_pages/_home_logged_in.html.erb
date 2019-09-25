@@ -1,7 +1,19 @@
-<div class="jumbotron home-jumbotron">
-  <h1 class="display-4">家計簿で、つながらん。</h1>
-  <p class="lead">つながる家計簿は家計簿アプリとSNSを組み合わせたサービスです。</p>
-  <hr class="my-4">
-  <p>まずは会員登録をして始めてみましょう！</p>
-  <a class="btn btn-lg signup-button" href="/signup" role="button">会員登録</a>
+<div class="profile_infomation">
+  <div class="profile-header">
+    <%= image_tag(current_user.header_image.url, class: "img-responsive header-image") %>
+  </div>
+  <div class="col-md-3 profile-sidebar">
+    <div class="profile-icon">
+      <%= image_tag(current_user.img.url, class: "img-responsive icon-image") %>
+    </div>
+    <div class="profile-name">
+      <%= "#{current_user.name} さん" %>
+    </div>
+    <div class="profile-created_at">
+      <%= "#{current_user.created_at.strftime('%Y年%m月%d')}日に登録" %>
+    </div>
+  </div>
+  <div class="col-md-9 profile-information">
+    <h1>ここに色々な情報を入れる。</h1>
+  <div>
 </div>
