@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
+  has_many :book_records
   before_save { email.downcase! }
   mount_uploader :img, ImgUploader
   mount_uploader :header_image, HeaderImageUploader
