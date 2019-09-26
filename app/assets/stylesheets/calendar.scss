@@ -1,0 +1,22 @@
+/* for simple_calendar */
+.simple-calendar {
+  color: black;
+
+  thead {
+    background-color: white;
+  }
+
+  .day {
+    background-color: white;
+  }
+
+  /* Row of Sunday */
+  .wday-0 {
+    background-color: #ffd1d1
+  }
+
+  /* Row of Saturday */
+  .wday-6 {
+    background-color: #d1e3ff
+  }
+}
