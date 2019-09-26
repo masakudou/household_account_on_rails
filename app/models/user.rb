@@ -33,4 +33,18 @@ class User < ApplicationRecord
   def login_cookie_forget
     update_attribute(:remember_digest, nil)
   end
+
+  def sum_of_amount_for_expenditure
+    sum_expenditure = 0
+    book_records.each do |record|
+      sum_expenditure += record.amount if record.direction == zero
+    end
+  end
+
+  def sum_of_amount_for_income
+    sum_income = 0
+    book_records.each do |record|
+      sum_income += record.amount if record.direction == 1
+    end
+  end
 end
