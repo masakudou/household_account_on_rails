@@ -1,4 +1,4 @@
-<%= month_calendar(attribute: :record_date, events: current_user.daily_balances.all) do |date, balances| %>
+<%= month_calendar(attribute: :record_date, events: user.daily_balances.all) do |date, balances| %>
   <%= date.day %>
 
   <% balances.each do |balance| %>
