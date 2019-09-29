@@ -1,4 +1,4 @@
-class BookRecordController < ApplicationController
+class BookRecordsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   def create
     @book_record = current_user.book_records.build(book_record_params)
@@ -22,11 +22,12 @@ class BookRecordController < ApplicationController
   end
 
   def set_daily_balance(book_record)
-    if user.daily_balances.find_by(record_date: book_record.record_date).nil?
+    daily_balance = current_user.daily_balances.find_by(record_date: book_record.record_date)
+    if daily_balance.nil?
       daily_balance = current_user.daily_balances.build(expenditure: 0, income: 0, record_date: book_record.record_date)
     end
     # 支出
-    if book_record.direction == zero
+    if book_record.direction.zero?
       daily_balance.expenditure += book_record.amount
     # 収入
     else
