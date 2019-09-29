@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   post "/users/:id/settings/images", to: "users#images_reset", as: "images_reset"
   resources :users, only: [:new, :create, :show, :destroy]
 
+  # book_records
+  resources :book_records, only: [:create, :destroy]
+
   # sessions
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
