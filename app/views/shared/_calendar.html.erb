@@ -1,15 +1,12 @@
-<%= month_calendar(attribute: :record_date, events: current_user.book_records.all) do |date, records| %>
+<%= month_calendar(attribute: :record_date, events: current_user.daily_balances.all) do |date, balances| %>
   <%= date.day %>
 
-  <% records.each do |record| %>
-    <% if record.direction == 0 %>
-      <div class="amount-expenditure">
-        支出: ¥<%= record.amount %>
-      </div>
-    <% else%>
-      <div class="amount-income">
-        収入: ¥<%= record.amount %>
-      </div>
-    <% end %>
+  <% balances.each do |balance| %>
+    <div class="amount-expenditure">
+      支出: ¥<%= balance.expenditure %>
+    </div>
+    <div class="amount-income">
+      収入: ¥<%= balance.income %>
+    </div>
   <% end %>
 <% end %>
