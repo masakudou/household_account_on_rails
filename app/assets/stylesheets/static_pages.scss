@@ -4,7 +4,7 @@
 /* not logged in */
 .static_pages {
   /* yield(body) */
-  padding-top: 60px;
+  padding: 60px 0;
   background-image: url("bg.jpg");
   background-size: cover;
   background-color: gray;
@@ -29,7 +29,7 @@
 
 /* logged in - ログイン中の場合はこのスタイルで上書きする */
 .body-logged-in {
-  padding-top: 60px;
+  padding: 60px 0;
   background-image: initial;
   background-color: #bce0dc;
 
