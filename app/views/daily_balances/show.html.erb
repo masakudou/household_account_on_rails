@@ -1,2 +1,16 @@
-<h1>DailyBalances#show</h1>
-<p>Find me in app/views/daily_balances/show.html.erb</p>
+<div class="daily-balances">
+  <%= "#{@daily_balances.record_date}" %>
+  <% @book_records.each do |record| %>
+    <% if record.direction.zero? %>
+      <div class="daily-expenditure">
+        <%= record.category %>
+        <%= record.amount %>
+      </div>
+    <% else %>
+      <div class="daily-income">
+        <%= record.category %>
+        <%= record.amount %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

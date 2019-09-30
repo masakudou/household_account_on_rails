@@ -1,3 +1,12 @@
-// Place all the styles related to the DailyBalances controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.daily_balances {
+  /* yield(body) */
+  padding: 60px 0;
+
+  .daily-expenditure {
+    color: #f13d3d;
+  }
+
+  .daily-income {
+    color: #3dd030;
+  }
+}
