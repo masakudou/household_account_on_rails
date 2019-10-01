@@ -1,6 +1,6 @@
 <div class="daily-balances">
   <div class="record-date-title">
-    <%= "#{@daily_balances.record_date.strftime("%Y年%m月%d日")}の収支詳細" %>
+    <%= "#{@user.name}さんの収支詳細 - #{@daily_balances.record_date.strftime("%Y年%m月%d日")}" %>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
@@ -9,13 +9,21 @@
           <li class="book-record-element list-group-item">
             <% if record.direction.zero? %>
               <div class="daily-expenditure">
-                <%= get_category_name(record.category) %>
-                <%= record.amount %>
+                <div class="expenditure-category">
+                  <%= "カテゴリ: #{get_category_name(record.category)}" %>
+                </div>
+                <div class="expenditure-amount">
+                  <%= "支出: #{record.amount} 円" %>
+                </div>
               </div>
             <% else %>
               <div class="daily-income">
-                <%= record.category %>
-                <%= record.amount %>
+                <div class="income-category">
+                  <%= "カテゴリ: #{get_category_name(record.category)}" %>
+                </div>
+                <div class="income-amount">
+                  <%= "収入: #{record.amount} 円" %>
+                </div>
               </div>
             <% end %>
           </li>
