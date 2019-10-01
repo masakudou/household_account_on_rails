@@ -1,16 +1,26 @@
 <div class="daily-balances">
-  <%= "#{@daily_balances.record_date}" %>
-  <% @book_records.each do |record| %>
-    <% if record.direction.zero? %>
-      <div class="daily-expenditure">
-        <%= record.category %>
-        <%= record.amount %>
-      </div>
-    <% else %>
-      <div class="daily-income">
-        <%= record.category %>
-        <%= record.amount %>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="record-date-title">
+    <%= "#{@daily_balances.record_date.strftime("%Y年%m月%d日")}の収支詳細" %>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <ul class="book_record-list list-group">
+        <% @book_records.each do |record| %>
+          <li class="book-record-element list-group-item">
+            <% if record.direction.zero? %>
+              <div class="daily-expenditure">
+                <%= get_category_name(record.category) %>
+                <%= record.amount %>
+              </div>
+            <% else %>
+              <div class="daily-income">
+                <%= record.category %>
+                <%= record.amount %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
