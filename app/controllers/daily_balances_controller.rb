@@ -18,7 +18,7 @@ class DailyBalancesController < ApplicationController
       next unless record.direction.zero?
 
       category = Category.find_by(id: record.category)
-      category_name = category.nil? ? "Uncategorized" : category.category_name
+      category_name = category.nil? ? "Uncategorized" : category.name
       category_amount = categorized_exp_hash[category_name].nil? ? 0 : categorized_exp_hash[category_name]
       categorized_exp_hash.store(category_name, category_amount + record.amount)
     end
