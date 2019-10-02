@@ -13,7 +13,7 @@
     <div class="category-select">
       <%= f.label :category, "種別(0)", class: "book-record-form-control" %>
       <%= f.hidden_field :category, :value => 0 %>
-      <%= f.select :category, Category.all.map { |category| [category.category_name, category.id] } %>
+      <%= f.select :category, Category.all.map { |category| [category.name, category.id] } %>
     </div>
 
     <div class="amount-number-field">
