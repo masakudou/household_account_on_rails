@@ -33,6 +33,8 @@ gem 'mini_magick', '4.9.5'
 gem 'bootsnap', '1.4.5', require: false
 # Calendar at /home
 gem 'simple_calendar', '~> 2.0'
+# Create graph
+gem 'chartkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
