@@ -7,7 +7,7 @@
   }
 
   .day {
-    background-color: white;
+    background-color: #ffe8ca;
   }
 
   /* Row of Sunday */
@@ -19,12 +19,18 @@
   .wday-6 {
     background-color: #d1e3ff
   }
+  
+  .simple-calendar-date {
+    font-size: 24px;
 
-  .amount-expenditure {
-    color: #f13d3d;
-  }
-
-  .amount-income {
-    color: #3dd030;
+    .amount-expenditure {
+      font-size: 12px;
+      color: #f13d3d;
+    }
+  
+    .amount-income {
+      font-size: 12px;
+      color: #3dd030;
+    }
   }
 }

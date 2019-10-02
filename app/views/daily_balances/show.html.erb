@@ -14,10 +14,10 @@
         <%= "収入: #{@daily_balance.income} 円" %>
       </div>
       <div class="exp-inc-chart">
-        <%= pie_chart @exp_inc_data %>
+        <%= pie_chart(@exp_inc_data, colors: ["#3dd030","#f13d3d"]) %>
       </div>
       <div class="categorized-exp-chart">
-        <%= pie_chart @categorized_exp_data %>
+        <%= pie_chart(@categorized_exp_data, colors: @color_data) %>
       </div>
     </div>
     <div class="col-md-8">
