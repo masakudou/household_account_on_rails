@@ -1,6 +1,6 @@
 <div class="daily-balances">
   <div class="record-date-title">
-    <%= "#{@user.name}さんの収支詳細 - #{@daily_balances.record_date.strftime("%Y年%m月%d日")}" %>
+    <%= "#{@user.name}さんの収支詳細 - #{@daily_balance.record_date.strftime("%Y年%m月%d日")}" %>
   </div>
   <div class="row">
     <div class="col-md-4 daily-balance-sidebar">
@@ -8,10 +8,16 @@
         収支計
       </div>
       <div class="total-expenditure">
-        <%= "支出: #{@daily_balances.expenditure} 円" %>
+        <%= "支出: #{@daily_balance.expenditure} 円" %>
       </div>
       <div class="total-income">
-        <%= "収入: #{@daily_balances.income} 円" %>
+        <%= "収入: #{@daily_balance.income} 円" %>
+      </div>
+      <div class="exp-inc-chart">
+        <%= pie_chart @exp_inc_data %>
+      </div>
+      <div class="categorized-exp-chart">
+        <%= pie_chart @categorized_exp_data %>
       </div>
     </div>
     <div class="col-md-8">
