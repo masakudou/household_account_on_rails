@@ -27,19 +27,25 @@
   }
 
   .total-expenditure {
-    font-size: 32px;
+    font-size: 28px;
     border: 3px ridge white;
+    width: 70%;
     color: white;
     border-radius: 10px;
-    background-color: #ff7d7d;
+    background-color: #ce0f0f;
+    padding: 10px;
+    margin: 10px 0 4px 50px;
   }
 
   .total-income {
-    font-size: 32px;
-    color: white;
+    font-size: 28px;
     border: 3px ridge white;
+    width: 70%;
+    color: white;
     border-radius: 10px;
-    background-color: #63f156;
+    background-color: #11cc00;
+    padding: 10px;
+    margin: 10px 0 4px 50px;
   }
 
   .daily-balance-ratio-title {
@@ -71,24 +77,56 @@
 
     .expenditure-category {
       font-size: 36px;
+
+      span {
+        font-size: 48px;
+      }
     }
 
     .expenditure-amount {
-      font-size: 24px;
-      margin-top: 40px;
+      font-size: 28px;
+      margin-top: 25px;
       color: #f13d3d;
       float: right;
     }
   
     .income-category {
       font-size: 36px;
+
+      span {
+        font-size: 48px;
+      }
     }
 
     .income-amount {
-      font-size: 24px;
-      margin-top: 40px;
+      font-size: 28px;
+      margin-top: 25px;
       color: #3dd030;
       float: right;
     }
+  }
+
+  .back-link {
+    background-color: #72d5c9;
+    border: 3px outset #72d5c9;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 70px;
+    text-align: center;
+    color: white;
+    float: right;
+    margin-bottom: 30px;
+
+    &:hover {
+      background-color: #7aeede;
+      border-color: #7aeede;
+      color: white;
+    }
+
+    a {
+      color: white;
+    }
+
+
   }
 }
