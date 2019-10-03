@@ -15,7 +15,9 @@
     <%= render("book_record_form") %>
   </div>
   <div class="col-md-9 profile-information">
-    <h1><%= "#{current_user.name}さんの#{Time.zone.now.strftime('%Y年%m月')}度収支" %></h1>
+    <div class="monthly-balances-title">
+      <%= "#{current_user.name}さんの#{Time.zone.now.strftime('%Y年%m月')}度収支" %>
+    </div>
     <%= render("shared/calendar", user: current_user) %>
   <div>
 </div>

@@ -75,5 +75,16 @@
   .profile-information {
     background-color: #ffc785;
     color: white;
+
+    .monthly-balances-title {
+      margin: 8px 0 8px 0px;
+      color: white;
+      text-align: center;
+      font-size: 28px;
+      background-color: #ffb067;
+      border: 4px outset #fdb472;
+      border-radius: 10px;
+      padding: 8px 15px 8px 15px;
+    }
   }
 }

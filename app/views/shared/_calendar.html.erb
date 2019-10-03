@@ -1,7 +1,10 @@
 <%= month_calendar(attribute: :record_date, events: user.daily_balances.all) do |date, balances| %>
+  <div class="day-number">
+    <%= date.day %>
+  </div>
   <% balances.each do |balance| %>
     <dic class="simple-calendar-date">
-      <%= link_to "#{date.day}", user_daily_balance_url(user, balance) %>
+      <%= link_to "", user_daily_balance_url(user, balance) %>
       <div class="amount-expenditure">
         支出: ¥<%= balance.expenditure %>
       </div>

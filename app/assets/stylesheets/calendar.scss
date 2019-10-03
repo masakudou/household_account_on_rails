@@ -3,11 +3,27 @@
   color: black;
 
   thead {
-    background-color: white;
+    background-color: #ffb067;
+    color: #ffe7c9;
+    font-size: 16px;
   }
 
   .day {
     background-color: #ffe8ca;
+    position: relative;
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height:100%;
+      width: 100%;
+    }
+
+    .day-number {
+      font-size: 20px;
+      color: #484848;;
+    }
   }
 
   /* Row of Sunday */
@@ -24,12 +40,12 @@
     font-size: 24px;
 
     .amount-expenditure {
-      font-size: 12px;
+      font-size: 14px;
       color: #f13d3d;
     }
   
     .amount-income {
-      font-size: 12px;
+      font-size: 14px;
       color: #3dd030;
     }
   }
