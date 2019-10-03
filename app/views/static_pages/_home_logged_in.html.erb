@@ -16,7 +16,7 @@
   </div>
   <div class="col-md-9 profile-information">
     <div class="monthly-balances-title">
-      <%= "#{current_user.name}さんの#{Time.zone.now.strftime('%Y年%m月')}度収支" %>
+      <%= "#{current_user.name}さんの収支カレンダー" %>
     </div>
     <%= render("shared/calendar", user: current_user) %>
   <div>
