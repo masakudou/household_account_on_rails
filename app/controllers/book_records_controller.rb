@@ -7,7 +7,7 @@ class BookRecordsController < ApplicationController
       flash[:success] = "新しい収支が記録されました！"
       redirect_to(root_url)
     else
-      render("/")
+      render(root_path)
     end
   end
 
