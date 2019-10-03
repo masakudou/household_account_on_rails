@@ -7,7 +7,6 @@
   <div class="collapse" id="example-1">
     <div class="book-record-form">
       <%= form_for(:book_record, url: book_records_path) do |f| %>
-
         <div class="direction-radio">
           <label><%= f.radio_button :direction, 0, :checked => "checked" %> 支出</label>
           <label><%= f.radio_button :direction, 1 %> 収入</label>

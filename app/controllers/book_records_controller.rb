@@ -7,7 +7,8 @@ class BookRecordsController < ApplicationController
       flash[:success] = "新しい収支が記録されました！"
       redirect_to(root_url)
     else
-      render(root_path)
+      flash.now[:danger] = "入力に不備があります。"
+      render("static_pages/home")
     end
   end
 
