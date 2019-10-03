@@ -33,7 +33,7 @@
             <% if record.direction.zero? %>
               <div class="daily-expenditure">
                 <div class="expenditure-category">
-                  <%= "カテゴリ: #{get_category_name(record.category)}" %>
+                  <%= "カテゴリ: #{get_category_name(record.category)}" %><span style="color:<%= get_category_color(record.category) %>">■</span>
                 </div>
                 <div class="expenditure-amount">
                   <%= "支出: #{record.amount} 円" %>
@@ -42,7 +42,7 @@
             <% else %>
               <div class="daily-income">
                 <div class="income-category">
-                  <%= "カテゴリ: #{get_category_name(record.category)}" %>
+                  <%= "カテゴリ: #{get_category_name(record.category)}" %><span style="color:<%= get_category_color(record.category) %>">■</span>
                 </div>
                 <div class="income-amount">
                   <%= "収入: #{record.amount} 円" %>

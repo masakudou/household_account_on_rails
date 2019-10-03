@@ -77,22 +77,30 @@
 
     .expenditure-category {
       font-size: 36px;
+
+      span {
+        font-size: 48px;
+      }
     }
 
     .expenditure-amount {
-      font-size: 24px;
-      margin-top: 40px;
+      font-size: 28px;
+      margin-top: 25px;
       color: #f13d3d;
       float: right;
     }
   
     .income-category {
       font-size: 36px;
+
+      span {
+        font-size: 48px;
+      }
     }
 
     .income-amount {
-      font-size: 24px;
-      margin-top: 40px;
+      font-size: 28px;
+      margin-top: 25px;
       color: #3dd030;
       float: right;
     }
@@ -108,7 +116,7 @@
     color: white;
     float: right;
     margin-bottom: 30px;
-    
+
     &:hover {
       background-color: #7aeede;
       border-color: #7aeede;
