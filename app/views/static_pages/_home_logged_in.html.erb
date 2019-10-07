@@ -15,9 +15,6 @@
     <%= render("static_pages/book_record_form") %>
   </div>
   <div class="col-md-9 profile-information">
-    <div class="monthly-balances-title">
-      <%= "あなたの収支カレンダー" %>
-    </div>
-    <%= render("shared/calendar", user: current_user) %>
+    <%= render("shared/carousel", user: current_user) %>
   <div>
 </div>

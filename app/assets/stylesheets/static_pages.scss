@@ -47,6 +47,7 @@
   .profile-sidebar {
     background-color: #df7599;
     color: white;
+    height: 600px;
 
     .profile-icon {
       margin-top: 16px;
@@ -130,10 +131,49 @@
       color: white;
       text-align: center;
       font-size: 28px;
-      background-color: #ffb067;
+      background-color: #fdb472;
       border: 4px outset #fdb472;
-      border-radius: 10px;
       padding: 8px 15px 8px 15px;
+    }
+
+    .user-statistics {
+      .aggregation-period {
+        font-size: 24px;
+        background-color: #ff9e45;
+        border: 1px outset #fdb472;
+        width: 40%;
+        text-align: center;
+        padding: 4px 12px;
+      }
+
+      .monthly-expenditure {
+        font-size: 24px;
+        width: 60%;
+        margin: 5px 0 2.5px 18px;
+        background-color: #ff8080;
+      }
+
+      .monthly-income {
+        font-size: 24px;
+        width: 60%;
+        margin: 2.5px 0 0 18px;
+        background-color: #6cff5f;
+      }
+    }
+
+    /* carousel-control override */
+    .carousel-control {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: 0 -15px;
+      width: 2%;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0);
+      filter: alpha(opacity=50);
+      opacity: 0.5;
     }
   }
 }

@@ -1,0 +1,11 @@
+<div class="user-statistics">
+  <div class="aggregation-period">
+    <%= "#{Time.zone.now.year}年 #{Time.zone.now.month}月度の統計情報" %>
+  </div>
+  <div class="monthly-expenditure">
+    月の総支出: <%= extract_balances_of_current_month(user, 0) %> 円
+  </div>
+  <div class="monthly-income">
+    月の総収入: <%= extract_balances_of_current_month(user, 1) %> 円
+  </div>
+</div>
