@@ -150,6 +150,7 @@
         font-size: 24px;
         width: 60%;
         margin: 5px 0 2.5px 18px;
+        padding: 4px 12px;
         background-color: #ff8080;
       }
 
@@ -157,7 +158,18 @@
         font-size: 24px;
         width: 60%;
         margin: 2.5px 0 0 18px;
+        padding: 4px 12px;
         background-color: #6cff5f;
+      }
+
+      .chart-title {
+        font-size: 24px;
+        background-color: #ff9e45;
+        border: 1px outset #fdb472;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 10px 0;
+        padding: 4px 12px;
       }
     }
 
