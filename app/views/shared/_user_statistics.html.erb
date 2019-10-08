@@ -8,4 +8,24 @@
   <div class="monthly-income">
     月の総収入: <%= extract_balances_of_current_month(user, 1) %> 円
   </div>
+  <div class="row">
+    <div class="col-md-6 exp-inc-chart">
+      <div class="chart-title">
+        <%= "今月の収支比" %>
+      </div>
+      <div class="chart">
+        <%= pie_chart({ "収入" => extract_balances_of_current_month(user, 1), 
+                        "支出" => extract_balances_of_current_month(user, 0)}, 
+                        colors: ["#6cff5f","#ff8080"]) %>
+      </div>
+    </div>
+    <div class="col-md-6 category-chart">
+      <div class="chart-title">
+        <%= "今月のカテゴリ別支出" %>
+      </div>
+      <div class="chart">
+        <%= pie_chart(@categorized_exp_data, colors: @color_data) %>
+      </div>
+    </div>
+  </div>
 </div>
