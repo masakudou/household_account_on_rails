@@ -18,12 +18,8 @@ module BookRecordHelper
       end
     end
 
-    # 支出額が0であるカテゴリのパラメーターは削除する
-    parameters.delete_if do |parameter|
-      parameter[1].zero?
-    end
-
-    parameters, colors = separate_color(parameters)
+    parameters = delete_if_amount_is_zero(parameters)
+    parameters, colors = separate_color_column(parameters)
 
     return [parameters, colors: colors]
   end
@@ -42,7 +38,7 @@ module BookRecordHelper
   end
 
   # parameterの第3引数(色コード)を別の配列に分離する
-  def separate_color(parameters)
+  def separate_color_column(parameters)
     colors = []
     parameters.each do |parameter|
       colors.push(parameter[2])
@@ -50,5 +46,12 @@ module BookRecordHelper
     end
 
     return parameters, colors
+  end
+
+  # 支出額が0であるカテゴリのパラメーターは削除する
+  def delete_if_amount_is_zero(parameters)
+    parameters.delete_if do |parameter|
+      parameter[1].zero?
+    end
   end
 end
