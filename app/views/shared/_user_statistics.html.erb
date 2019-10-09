@@ -16,7 +16,7 @@
       <div class="chart">
         <%= pie_chart({ "収入" => extract_balances_of_current_month(user, 1), 
                         "支出" => extract_balances_of_current_month(user, 0)}, 
-                        colors: ["#6cff5f","#ff8080"]) %>
+                        colors: ["#6cff5f","#ff8080"], suffix: "円", thousands: ",") %>
       </div>
     </div>
     <div class="col-md-6 category-chart">
@@ -24,7 +24,7 @@
         <%= "今月のカテゴリ別支出" %>
       </div>
       <div class="chart">
-        <%= pie_chart(@categorized_exp_data, colors: @color_data) %>
+        <%= pie_chart(*monthly_expenditure_by_category(user, Time.zone.now)) %>
       </div>
     </div>
   </div>
