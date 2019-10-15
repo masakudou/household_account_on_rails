@@ -9,14 +9,24 @@
 
 - ユーザープロフィールページへのアイコン画像とヘッダー画像の登録機能
 
-- カレンダーを用いた収入・支出の記録
+- カレンダーを用いた収入・支出の記録(コメント付き)
 
 - 統計機能
 
 ### 未実装
 
-- ユーザー登録機能(SNSアカウント)
-
 - 毎月の固定収支の登録機能
 
-- 簡易的なSNS機能(マイクロポストの投稿、フォロー)
+- 簡易的なフォロー機能(気になるユーザーをフォローし、プロフィールページに飛べるように)
+
+## 使用した技術
+- Container: Docker for Mac
+  - Web Application Server
+    - Ruby 2.6.3
+    - Ruby on Rails 5.2.3
+  - DB Server
+    - PostgreSql
+
+- Test Framework: Rspec
+- Cloud Service: heroku
+  - Deployed App link: https://infinite-fjord-28667.herokuapp.com/
