@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_171320) do
+ActiveRecord::Schema.define(version: 2019_10_15_091727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_171320) do
     t.integer "income"
     t.date "record_date"
     t.bigint "user_id"
+    t.index ["user_id", "record_date"], name: "index_daily_balances_on_user_id_and_record_date", unique: true
     t.index ["user_id"], name: "index_daily_balances_on_user_id"
   end
 

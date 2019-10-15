@@ -21,7 +21,7 @@ module BookRecordHelper
     parameters = delete_if_amount_is_zero(parameters)
     parameters, colors = separate_color_column(parameters)
 
-    return [parameters, colors: colors]
+    return [parameters, colors: colors, messages: { empty: "データがありません。" }]
   end
 
   private

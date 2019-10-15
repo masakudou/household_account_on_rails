@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+  {
+  "type": "lldb",
+  "request": "launch",
+  "name": "Debug executable 'Rust'",
+  "cargo": {
+  "args": [
+  "build",
+  "--bin=Rust",
+  "--package=Rust"
+  ],
+  "filter": {
+  "kind": "bin"
+  }
+  },
+  "terminal": "integrated",
+  "args": [],
+  "cwd": "${workspaceFolder}"
+  },
+  ]
+}
