@@ -6,7 +6,7 @@
   <div class="carousel-inner">
     <div class="item active">
       <div class="monthly-balances-title">
-        <%= "あなたの収支カレンダー" %>
+        <%= "#{user.name} さんの収支カレンダー" %>
       </div>
       <%= render("shared/calendar", user: user) %>
     </div>
