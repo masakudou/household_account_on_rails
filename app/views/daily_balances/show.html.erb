@@ -37,6 +37,9 @@
                 </div>
                 <div class="expenditure-amount">
                   <%= "支出: #{record.amount} 円" %>
+                  <% if current_user?(@user) %>
+                    <%= link_to "収支の削除", record, class: "book-record-delete-button", method: :delete, data: { confirm: "この収支データを削除しますか？" } %>
+                  <% end %>
                 </div>
               </div>
             <% else %>
@@ -46,6 +49,9 @@
                 </div>
                 <div class="income-amount">
                   <%= "収入: #{record.amount} 円" %>
+                  <% if current_user?(@user) %>
+                    <%= link_to "収支の削除", record, class: "book-record-delete-button", method: :delete, data: { confirm: "この収支データを削除しますか？" } %>
+                  <% end %>
                 </div>
               </div>
             <% end %>

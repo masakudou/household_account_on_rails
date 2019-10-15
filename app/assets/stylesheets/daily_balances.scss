@@ -104,6 +104,29 @@
       color: #3dd030;
       float: right;
     }
+
+    .book-record-delete-button {
+      background-color: #72d5c9;
+      border: 3px outset #72d5c9;
+      border-radius: 10px;
+      font-size: 15px;
+      width: 150px;
+      text-align: center;
+      color: white;
+      float: right;
+      margin-left: 15px;
+      margin-top: 6px;
+  
+      &:hover {
+        background-color: #7aeede;
+        border-color: #7aeede;
+        color: white;
+      }
+  
+      a {
+        color: white;
+      }
+    }
   }
 
   .back-link {
@@ -126,7 +149,5 @@
     a {
       color: white;
     }
-
-
   }
 }
