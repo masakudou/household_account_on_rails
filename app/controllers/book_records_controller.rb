@@ -23,7 +23,7 @@ class BookRecordsController < ApplicationController
   private
 
   def book_record_params
-    params.require(:book_record).permit(:direction, :category, :amount, :record_date)
+    params.require(:book_record).permit(:direction, :category, :amount, :record_date, :comment)
   end
 
   def set_daily_balance(book_record)
