@@ -28,6 +28,11 @@
           <%= f.date_select :record_date, default: Time.zone.now, class: "book-record-form-control" %>
         </div>
 
+        <div class="comment-field">
+          <%= f.label :comment, "メモ", class: "book-record-form-control" %>
+          <%= f.text_area :comment, class: "book-record-form-control", size: "25x3" %>
+        </div>
+
         <%= f.submit "収支の登録", class: "btn btn-primary book-record-submit-button" %>
       <% end %>
     </div>

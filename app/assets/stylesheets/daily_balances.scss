@@ -72,11 +72,12 @@
 
   /* book_record list */
   .book-record-element {
-    height: 150px;
+    overflow: hidden;
     margin: 10px 0;
 
     .expenditure-category {
-      font-size: 36px;
+      font-size: 30px;
+      margin-top: -18px;
 
       span {
         font-size: 48px;
@@ -85,13 +86,13 @@
 
     .expenditure-amount {
       font-size: 28px;
-      margin-top: 25px;
       color: #f13d3d;
       float: right;
     }
   
     .income-category {
-      font-size: 36px;
+      font-size: 30px;
+      margin-top: -18px;
 
       span {
         font-size: 48px;
@@ -100,31 +101,35 @@
 
     .income-amount {
       font-size: 28px;
-      margin-top: 25px;
       color: #3dd030;
       float: right;
     }
 
-    .book-record-delete-button {
-      background-color: #72d5c9;
-      border: 3px outset #72d5c9;
-      border-radius: 10px;
-      font-size: 15px;
-      width: 150px;
-      text-align: center;
-      color: white;
-      float: right;
-      margin-left: 15px;
-      margin-top: 6px;
-  
-      &:hover {
-        background-color: #7aeede;
-        border-color: #7aeede;
+    .comment {
+      margin: 0 0 16px 0;
+    }
+
+    .delete-button-container {
+      margin-top: 30px;
+
+      .book-record-delete-button {
+        background-color: #72d5c9;
+        border: 3px outset #72d5c9;
+        border-radius: 10px;
+        font-size: 15px;
+        padding: 3px 10px;
+        text-align: center;
         color: white;
-      }
-  
-      a {
-        color: white;
+    
+        &:hover {
+          background-color: #7aeede;
+          border-color: #7aeede;
+          color: white;
+        }
+    
+        a {
+          color: white;
+        }
       }
     }
   }
