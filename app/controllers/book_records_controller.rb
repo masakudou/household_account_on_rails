@@ -13,7 +13,11 @@ class BookRecordsController < ApplicationController
   end
 
   def destroy
-
+    @book_record = BookRecord.find(params[:id])
+    reduce_daily_balance(@book_record)
+    @book_record.destroy
+    flash[:success] = "収支データを削除しました。"
+    redirect_back(fallback_location: root_path)
   end
 
   private
@@ -33,6 +37,18 @@ class BookRecordsController < ApplicationController
     # 収入
     else
       daily_balance.income += book_record.amount
+    end
+    daily_balance.save
+  end
+
+  def reduce_daily_balance(book_record)
+    daily_balance = current_user.daily_balances.find_by(record_date: book_record.record_date)
+    # 支出
+    if book_record.direction.zero?
+      daily_balance.expenditure -= book_record.amount
+    # 収入
+    else
+      daily_balance.income -= book_record.amount
     end
     daily_balance.save
   end

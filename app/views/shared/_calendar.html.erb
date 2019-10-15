@@ -3,14 +3,16 @@
     <%= date.day %>
   </div>
   <% balances.each do |balance| %>
-    <dic class="simple-calendar-date">
-      <%= link_to "", user_daily_balance_url(user, balance) %>
-      <div class="amount-expenditure">
-        支出: ¥<%= balance.expenditure %>
-      </div>
-      <div class="amount-income">
-        収入: ¥<%= balance.income %>
-      </div>
+    <div class="simple-calendar-date">
+      <% if !empty_daily_balance?(balance) %>
+        <%= link_to "", user_daily_balance_url(user, balance) %>
+        <div class="amount-expenditure">
+          支出: ¥<%= balance.expenditure %>
+        </div>
+        <div class="amount-income">
+          収入: ¥<%= balance.income %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 <% end %>
