@@ -38,3 +38,6 @@ function dateAlignmentForBookRecordForm()
 
 /* 収支登録フォームの登録月を変更する度に整合性を取る。 */
 $(document).on("change", "select[id$='i']",function(){ dateAlignmentForBookRecordForm(); });
+
+/* ページ表示時にも呼ぶ */
+$(document).on("load", function(){ dateAlignmentForBookRecordForm(); });
