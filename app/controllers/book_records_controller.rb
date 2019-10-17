@@ -26,6 +26,11 @@ class BookRecordsController < ApplicationController
     params.require(:book_record).permit(:direction, :category, :amount, :record_date, :comment)
   end
 
+  # book_record.record_dateとcurrent_user.idの複合キーを持つレコードがDailyBalanceモデル上に存在しない場合、
+  # 新たにcurrent_userに紐づいたDailyBalanceモデルのレコードをrecord_dateで生成する。
+  # 一方、該当するユーザーと日付のレコードがDailyBalanceモデル上に存在する場合は、既に存在するレコードの収支を今回登録する収支データの値で更新する。
+  # HACK: 構造上、User.DailyBalance.BookRecordという形にできると思われるが、simple_calendarにおいてはDailyBalanceモデルをBookRecordモデルとは独立して
+  #       持っていた方が書きやすい。
   def set_daily_balance(book_record)
     daily_balance = current_user.daily_balances.find_by(record_date: book_record.record_date)
     if daily_balance.nil?
@@ -41,6 +46,8 @@ class BookRecordsController < ApplicationController
     daily_balance.save
   end
 
+  # 削除する場合、該当するユーザー・日付の複合キーを持つDailyBalanceレコードの収支を更新する。
+  # NOTE: 収支が0になった時は、レコードを消さずに残しておく。カレンダー上では収支が0のレコードは表示されなくなる。
   def reduce_daily_balance(book_record)
     daily_balance = current_user.daily_balances.find_by(record_date: book_record.record_date)
     # 支出
