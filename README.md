@@ -17,8 +17,6 @@
 
 - 毎月の固定収支の登録機能
 
-- 簡易的なフォロー機能(気になるユーザーをフォローし、プロフィールページに飛べるように)
-
 ## 使用した技術
 - Container: Docker for Mac
   - Web Application Server
