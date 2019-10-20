@@ -15,6 +15,10 @@ module HouseholdAccountOnRails
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     # mount_uploaderでuninitialized constantエラーが出るのを回避
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
+    # 週の開始曜日
+    config.beginning_of_week = :sunday
+    # タイムゾーン
+    config.time_zone = 'Tokyo'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

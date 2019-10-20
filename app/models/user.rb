@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
+  has_many :book_records, dependent: :destroy
+  has_many :daily_balances, dependent: :destroy
   before_save { email.downcase! }
   mount_uploader :img, ImgUploader
   mount_uploader :header_image, HeaderImageUploader
@@ -25,10 +27,25 @@ class User < ApplicationRecord
 
   def authenticated?(remember_token)
     return false if remember_digest.nil?
+
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   def login_cookie_forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def sum_of_amount_for_expenditure
+    sum_expenditure = 0
+    book_records.each do |record|
+      sum_expenditure += record.amount if record.direction == zero
+    end
+  end
+
+  def sum_of_amount_for_income
+    sum_income = 0
+    book_records.each do |record|
+      sum_income += record.amount if record.direction == 1
+    end
   end
 end

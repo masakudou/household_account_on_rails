@@ -7,7 +7,7 @@
     <%= form_for(@user, url: signup_path) do |f| %>
       <%= render("shared/error_messages") %>
 
-      <%= f.label :name, "ユーザーID(必須項目)"%>
+      <%= f.label :name, "ユーザー名(必須項目)"%>
       <%= f.text_field :name, class: "form-control" %>
 
       <%= f.label :email, "メールアドレス(必須項目)" %>

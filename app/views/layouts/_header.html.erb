@@ -1,11 +1,7 @@
 <header class="navbar navbar-dark navbar-fixed-top header-navbar">
   <div class="container">
     <ul class="nav navbar-dark navbar-nav navbar-left">
-      <% if logged_in? %>
-        <li class="navlist"><%= link_to "ホーム", @current_user, class: "header-tohome" %></li>
-      <% else %>
-        <li class="navlist"><%= link_to "無駄遣いチェッカー(仮称)", "/", class: "header-tohome" %></li>
-      <% end %>
+      <li class="navlist"><%= link_to "ホーム", "/", class: "header-tohome" %></li>
     </ul>
     <ul class="nav navbar-dark navbar-nav navbar-right">
       <% if logged_in? %>

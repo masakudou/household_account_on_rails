@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'daily_balances/show'
   # static_pages
   get "/home",  to: "static_pages#home"
   get "/help",  to: "static_pages#help"
@@ -14,6 +15,12 @@ Rails.application.routes.draw do
   patch "/users/:id/settings/images", to: "users#images_update", as: "images_update"
   post "/users/:id/settings/images", to: "users#images_reset", as: "images_reset"
   resources :users, only: [:new, :create, :show, :destroy]
+  resources :users do
+    resources :daily_balances, only: [:show]
+  end
+
+  # book_records
+  resources :book_records, only: [:create, :destroy]
 
   # sessions
   get "/login", to: "sessions#new"

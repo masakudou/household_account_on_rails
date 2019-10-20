@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_135438) do
+ActiveRecord::Schema.define(version: 2019_10_15_133036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "book_records", force: :cascade do |t|
+    t.integer "direction"
+    t.integer "category"
+    t.integer "amount"
+    t.date "record_date"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "comment"
+    t.index ["user_id", "record_date"], name: "index_book_records_on_user_id_and_record_date"
+    t.index ["user_id"], name: "index_book_records_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+  end
+
+  create_table "daily_balances", force: :cascade do |t|
+    t.integer "expenditure"
+    t.integer "income"
+    t.date "record_date"
+    t.bigint "user_id"
+    t.index ["user_id", "record_date"], name: "index_daily_balances_on_user_id_and_record_date", unique: true
+    t.index ["user_id"], name: "index_daily_balances_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -27,4 +54,6 @@ ActiveRecord::Schema.define(version: 2019_09_19_135438) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "book_records", "users"
+  add_foreign_key "daily_balances", "users"
 end

@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:settings_edit, :settings_update, :images_edit, :images_update, :images_reset]
+  before_action :correct_user, only: [:settings_edit, :settings_update, :images_edit, :images_update, :images_reset]
+
   def show
     @user = User.find_by(id: params[:id])
   end
@@ -14,7 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in(@user)
       flash[:success] = "ようこそ！ #{@user.name}さん！"
-      redirect_to(@user)
+      redirect_to(root_url)
     else
       render("new")
     end
@@ -73,5 +76,11 @@ class UsersController < ApplicationController
 
   def user_images_params
     params.require(:user).permit(:img, :header_image)
+  end
+
+  # before actions
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
   end
 end
