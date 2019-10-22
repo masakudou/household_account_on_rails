@@ -8,8 +8,19 @@
   border: initial;
 }
 
-.header-tohome {
+.navbar-inverse {
+  .navbar-nav {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
+}
 
+.header-tohome {
+  margin: 12px 0 0 8px;
+  font-size: 18px;
 }
 
 header a {
