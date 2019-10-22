@@ -191,146 +191,37 @@
   }
 }
 
-/* for pc browser */
-@media screen and (min-width:1025px)
+/* for smartphone browser */
+@media screen and (max-width:1025px)
 {
-  /* HACK:controller.controller_nameを使ってクラス名を生成している関係上、_表記になる */
-  /* not logged in */
-  .static_pages {
-    /* yield(body) */
-    padding: 60px 0;
-    background-image: url("bg.jpg");
-    background-size: cover;
-    background-color: gray;
-    background-blend-mode: multiply;
-
-      /* home page */
-    .signup-button {
-      background-color: #72d6c9;
-      border-color: #7aeede;
-      color: white;
-      &:hover {
-        background-color: #7aeede;
-        color: white;
-      }
-    }
-
-    .home-jumbotron {
-      background-color: rgba(50,50,50,0.9);
-      color: white;
-    }
-  }
-
   /* logged in - ログイン中の場合はこのスタイルで上書きする */
   .body-logged-in {
-    padding: 60px 0;
-    background-image: initial;
-    background-color: #bce0dc;
-
     /* profile page header */
     .profile-header {
-      background-color: #333333;
-      margin-top: -10px;
+      margin: -10px -15px -16px -15px;
     }
-
-    .header-image {
-      opacity: 0.3;
-    }
-
+  
     /* profile page sidebar */
     .profile-sidebar {
-      background-color: #df7599;
-      color: white;
-      height: 700px;
-
-      .profile-icon {
-        margin-top: 16px;
-        padding: 20px;
-
-        .icon-image {
-          border: 4px ridge #ffc785;
-          border-radius: 10px;
-        }
-      }
-
-      .profile-name {
-        font-size: 28px;
-      }
-
-      .profile-created_at {
-        font-size: 18px;
-      }
-
-      .book-record-form-control {
-        color: black;
-      }
-
-      /* new book-record form */
-      .book-record-form-on-sidebar {
-        .book-record-form-title {
-          background-color: #dc5583;
-          padding: 10px 20px;
-          border-radius: 15px;
-          border: 3px outset #df7599;
-          width: 100%;
-          margin: 20px 0;
-          font-size: 16px;
-
-          &:hover {
-            background-color: #ffebf2;
-            color: #dc5583;
-          }
-        }
-
-        .book-record-form {
-          select {
-            color: black;
-          }
-
-          input {
-            color: black;
-          }
-
-          label {
-            color: white;
-          }
-
-          .book-record-submit-button {
-            background-color: #dc5583;
-            padding: 6px 12px;
-            text-align: center;
-            border-radius: 15px;
-            border: 3px outset #df7599;
-            width: 80%;
-            margin: 4px 0 10px 24px;
-            font-size: 18px;
-            color: white;
-
-            &:hover {
-              background-color: #ffebf2;
-              color: #dc5583;
-            }
-          }
-        }
-      }
+      margin: 0px -15px 0 -15px;
     }
-
+  
     /* profile page information */
     .profile-information {
       background-color: #ffc785;
       color: white;
-      height: 700px;
-
+      margin: 0px -15px 0 -15px;
+  
       .monthly-balances-title {
         margin: 8px 0 8px 0px;
         color: white;
         text-align: center;
-        font-size: 28px;
+        font-size: 18px;
         background-color: #fdb472;
-        border: 4px outset #fdb472;
-        padding: 8px 15px 8px 15px;
+        border: 3px outset #fdb472;
+        padding: 4px 8px 4px 8px;
       }
-
+  
       .user-statistics {
         .aggregation-period {
           font-size: 24px;
@@ -340,7 +231,7 @@
           text-align: center;
           padding: 4px 12px;
         }
-
+  
         .monthly-expenditure {
           font-size: 24px;
           width: 60%;
@@ -348,7 +239,7 @@
           padding: 4px 12px;
           background-color: #ff8080;
         }
-
+  
         .monthly-income {
           font-size: 24px;
           width: 60%;
@@ -356,7 +247,7 @@
           padding: 4px 12px;
           background-color: #6cff5f;
         }
-
+  
         .chart-title {
           font-size: 24px;
           background-color: #ff9e45;
@@ -367,7 +258,7 @@
           padding: 4px 12px;
         }
       }
-
+  
       /* carousel-control override */
       .carousel-control {
         position: absolute;

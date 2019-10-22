@@ -121,3 +121,36 @@
     }
   }
 }
+
+@media screen and (max-width:1025px)
+{
+  .simple-calendar {
+    thead {
+      font-size: 12px;
+    }
+
+    .calendar-heading {
+      a {
+        padding: 3px 10px;
+      }
+    }
+
+    .day {
+      .day-number {
+        font-size: 14px;
+      }
+    }
+
+    .simple-calendar-date {
+      .amount-expenditure {
+        font-size: 11px;
+        color: #f13d3d;
+      }
+    
+      .amount-income {
+        font-size: 11px;
+        color: #3dd030;
+      }
+    }
+  }
+}
