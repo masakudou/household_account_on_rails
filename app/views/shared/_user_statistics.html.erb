@@ -9,7 +9,7 @@
     月の総収入: <%= extract_balances_of_current_month(user, 1) %> 円
   </div>
   <div class="row">
-    <div class="col-md-6 exp-inc-chart">
+    <div class="col-md-6 col-sm-12 exp-inc-chart">
       <div class="chart-title">
         <%= "今月の収支比" %>
       </div>
@@ -19,7 +19,7 @@
                         colors: ["#6cff5f","#ff8080"], suffix: "円", thousands: ",") %>
       </div>
     </div>
-    <div class="col-md-6 category-chart">
+    <div class="col-md-6 col-sm-12 category-chart">
       <div class="chart-title">
         <%= "今月のカテゴリ別支出" %>
       </div>

@@ -156,3 +156,39 @@
     }
   }
 }
+
+@media screen and (max-width:1025px)
+{
+  .daily_balances {
+    .record-date-title {
+      margin: 20px 0 20px 0px;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    /* infomation sidebar */
+    .total-daily-balance-title {
+      font-size: 14px;
+    }
+
+    .total-expenditure {
+      font-size: 18px;
+      width: 100%;
+      margin: 4px 0 2px 0;
+    }
+
+    .total-income {
+      font-size: 18px;
+      width: 100%;
+      margin: 4px 0 2px 0;
+    }
+
+    .daily-balance-ratio-title {
+      font-size: 14px;
+    }
+  
+    .categorized-exp-chart-title {
+      font-size: 14px;
+    }
+  }
+}
