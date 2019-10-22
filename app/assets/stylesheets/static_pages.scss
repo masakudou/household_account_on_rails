@@ -208,8 +208,12 @@
   
     /* profile page information */
     .profile-information {
-      height: 100%;
+      height: 900px;
       margin: 0px -15px 0 -15px;
+
+    .monthly-balances-title {
+      font-size: 18px;
+    }
 
       .user-statistics {
         .aggregation-period {
@@ -230,30 +234,20 @@
         }
   
         .chart-title {
-          font-size: 24px;
-          background-color: #ff9e45;
-          border: 1px outset #fdb472;
+          font-size: 14px;
           width: 100%;
-          text-align: center;
-          margin: 10px 0 10px 0;
-          padding: 4px 12px;
         }
       }
   
       /* carousel-control override */
       .carousel-control {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: 0 -15px;
-        width: 2%;
-        height: 700px;
-        font-size: 20px;
-        color: #fff;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0);
-        filter: alpha(opacity=50);
-        opacity: 0.5;
+        height: 900px;
+        width: 5%;
+      }
+
+      .carousel-indicators {
+        position: relative;
+        top: 850px;
       }
     }
   }
