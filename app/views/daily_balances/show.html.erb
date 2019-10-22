@@ -1,8 +1,9 @@
 <div class="daily-balances">
   <div class="record-date-title">
-    <%= "#{@user.name}さんの収支詳細 - #{@daily_balance.record_date.strftime("%Y年%m月%d日")}" %>
+    <%= "#{get_user(@daily_balance.user_id).name}さんの収支詳細 - #{@daily_balance.record_date.strftime("%Y年%m月%d日")}" %>
   </div>
   <div class="row">
+    <!-- 収支合計額・グラフ表示部 -->
     <div class="col-md-4 daily-balance-sidebar">
       <div class="total-daily-balance-title">
         収支計
@@ -17,18 +18,19 @@
         収支割合
       </div>
       <div class="exp-inc-chart">
-        <%= pie_chart(@exp_inc_data, colors: ["#3dd030","#f13d3d"]) %>
+        <%= pie_chart(@daily_balance.expenditure_income_hashed, colors: ["#3dd030","#f13d3d"]) %>
       </div>
       <div class="categorized-exp-chart-title">
         カテゴリ別支出
       </div>
       <div class="categorized-exp-chart">
-        <%= pie_chart(@categorized_exp_data, colors: @color_data) %>
+        <%= pie_chart(*daily_expenditure_by_category(@daily_balance.user_id, @daily_balance.record_date)) %>
       </div>
     </div>
+    <!-- 収支レコードリスト -->
     <div class="col-md-8">
       <ul class="book_record-list list-group">
-        <% @book_records.each do |record| %>
+        <% get_book_records(@daily_balance.user_id, @daily_balance.record_date).each do |record| %>
           <li class="book-record-element list-group-item">
             <% if record.direction.zero? %>
               <div class="daily-expenditure">
