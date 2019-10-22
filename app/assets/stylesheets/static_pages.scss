@@ -1,6 +1,5 @@
 /* default tag styles for static-pages */
-
-/* HACK:controller.controller_nameを使ってクラス名を生成している関係上、どうしても_表記になる */
+/* HACK:controller.controller_nameを使ってクラス名を生成している関係上、_表記になる */
 /* not logged in */
 .static_pages {
   /* yield(body) */
@@ -188,6 +187,68 @@
       background-color: rgba(0, 0, 0, 0);
       filter: alpha(opacity=50);
       opacity: 0.5;
+    }
+  }
+}
+
+/* for smartphone browser */
+@media screen and (max-width:1025px)
+{
+  /* logged in - ログイン中の場合はこのスタイルで上書きする */
+  .body-logged-in {
+    /* profile page header */
+    .profile-header {
+      margin: -10px -15px -16px -15px;
+    }
+  
+    /* profile page sidebar */
+    .profile-sidebar {
+      margin: 0px -15px 0 -15px;
+    }
+  
+    /* profile page information */
+    .profile-information {
+      height: 900px;
+      margin: 0px -15px 0 -15px;
+
+    .monthly-balances-title {
+      font-size: 18px;
+    }
+
+      .user-statistics {
+        .aggregation-period {
+          font-size: 14px;
+          width: 100%;
+        }
+  
+        .monthly-expenditure {
+          font-size: 16px;
+          width: 100%;
+          margin: initial;
+        }
+  
+        .monthly-income {
+          font-size: 16px;
+          width: 100%;
+          margin: initial;
+        }
+  
+        .chart-title {
+          font-size: 14px;
+          width: 100%;
+        }
+      }
+  
+      /* carousel-control override */
+      .carousel-control {
+        height: 900px;
+        width: 5%;
+      }
+
+      .carousel-indicators {
+        position: relative;
+        top: 850px;
+      }
     }
   }
 }

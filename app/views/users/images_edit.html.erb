@@ -5,7 +5,7 @@
 <div class="row">
   <%= render("setting_sidebar", settings: @settings_class, images: @images_class) %>
   <div class="col-md-6 image-settings-form">
-    <%= form_for(@user, url: images_update_path(@user)) do |f| %>
+    <%= form_for(@user, url: images_update_path(@user), html: {id:"edit_user_image"}) do |f| %>
       <%= render("shared/error_messages") %>
 
       <%= f.label :header_image, "ヘッダー画像"%>
@@ -34,6 +34,6 @@ function checkNilImages()
     return;
   }
 
-  if( window.confirm("選択した画像ファイルをアップロードしますか？") ) $("#edit_user_2").submit();
+  if( window.confirm("選択した画像ファイルをアップロードしますか？") ) $("#edit_user_image").submit();
 }
 </script>

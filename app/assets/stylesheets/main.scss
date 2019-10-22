@@ -3,13 +3,30 @@
 
 /* header */
 /* using palette : #7189BF #df7599 #ffc785 #72d6c9 */
-.header-navbar {
+.navbar {
   background-color: #72d6c9;
+  border: initial;
+}
+
+.navbar-inverse {
+  .navbar-nav {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.header-tohome {
+  margin: 12px 0 0 8px;
+  font-size: 18px;
 }
 
 header a {
   color: white;
   &:hover {
+    background-color: white;
     color: #72d6c9;
   }
 }
