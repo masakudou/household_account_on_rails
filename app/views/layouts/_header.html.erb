@@ -19,7 +19,7 @@
             <li><%= link_to "設定", "/users/#{@current_user.id}/settings" %></li>
             <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>
-          <li class="navlist"><%= link_to "ログイン", "/login", class: "header-tohome" %></li>
+          <li class="navlist"><%= link_to "ログイン", "/login", class: "header-login" %></li>
         <% end %>
       </ul>
     </nav>
