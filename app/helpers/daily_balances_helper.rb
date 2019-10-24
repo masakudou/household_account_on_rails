@@ -28,7 +28,7 @@ module DailyBalancesHelper
   # User(user_id)が持つ日付dateの収支データを全て読み出し、pie_chartのパラメーター配列として返す
   def daily_expenditure_by_category(user_id, date)
     book_records = BookRecord.where(user_id: user_id, record_date: date)
-    parameters = initialize_parameter_array()
+    parameters = initialize_parameter_array(user_id)
     book_records.each do |record|
       # 収入のレコードは参照しない
       next unless record.direction.zero?

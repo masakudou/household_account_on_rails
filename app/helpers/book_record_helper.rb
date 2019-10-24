@@ -2,7 +2,7 @@ module BookRecordHelper
   # userが持つdate(月)の収支データを全て読み出し、pie_chartのパラメーター配列として返す
   def monthly_expenditure_by_category(user, date)
     book_records = BookRecord.where(user_id: user.id, record_date: date.in_time_zone.all_month)
-    parameters = initialize_parameter_array()
+    parameters = initialize_parameter_array(user.id)
     book_records.each do |record|
       # 収入のレコードは参照しない
       next unless record.direction.zero?

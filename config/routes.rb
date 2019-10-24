@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "/users/:id/settings/images", to: "users#images_edit", as: "images_edit"
   patch "/users/:id/settings/images", to: "users#images_update", as: "images_update"
   post "/users/:id/settings/images", to: "users#images_reset", as: "images_reset"
+  get "/users/:id/settings/category", to: "users#category_new", as: "category_new"
+  post "/users/:id/settings/category", to: "users#category_create", as: "category_create"
   resources :users, only: [:new, :create, :show, :destroy]
   resources :users do
     resources :daily_balances, only: [:show]

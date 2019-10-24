@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:settings_edit, :settings_update, :images_edit, :images_update, :images_reset]
-  before_action :correct_user, only: [:settings_edit, :settings_update, :images_edit, :images_update, :images_reset]
+  before_action :logged_in_user, only: [:settings_edit, :settings_update,
+                                        :images_edit, :images_update, :images_reset,
+                                        :category_new, :category_create]
+  before_action :correct_user, only: [:settings_edit, :settings_update,
+                                      :images_edit, :images_update, :images_reset,
+                                      :category_new, :category_create]
 
   def show
     @user = User.find_by(id: params[:id])
@@ -27,6 +31,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @settings_class = "active"
     @images_class = ""
+    @category_class = ""
   end
 
   def settings_update
@@ -43,6 +48,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @settings_class = ""
     @images_class = "active"
+    @category_class = ""
   end
 
   def images_update
@@ -68,6 +74,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def category_new
+    @category = Category.new
+    @settings_class = ""
+    @images_class = ""
+    @category_class = "active"
+  end
+
+  def category_create
+    @category = Category.new(category_params)
+    if @category.save
+      flash[:success] = "新しい収支カテゴリを登録しました。"
+      redirect_to(category_new_url)
+    else
+      render("category_new")
+    end
+  end
+
   private
 
   def user_params
@@ -76,6 +99,10 @@ class UsersController < ApplicationController
 
   def user_images_params
     params.require(:user).permit(:img, :header_image)
+  end
+
+  def category_params
+    params.require(:category).permit(:name, :color, :user_id)
   end
 
   # before actions

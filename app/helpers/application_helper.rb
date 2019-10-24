@@ -10,8 +10,9 @@ module ApplicationHelper
   end
 
   # Categoryモデルのレコード分+未定義分のパラメーター配列を初期化する。
-  def initialize_parameter_array
-    all_category = Category.all
+  def initialize_parameter_array(user_id)
+    # 共通カテゴリとユーザーが個別に作成したカテゴリを全て読み込む
+    all_category = Category.where("(user_id = ?) OR (user_id = ?)", 0, user_id)
     parameter_array = []
     all_category.each do |category|
       parameter_array.push([category.name, 0, category.color])
