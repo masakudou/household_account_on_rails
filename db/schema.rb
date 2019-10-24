@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_130416) do
+ActiveRecord::Schema.define(version: 2019_10_24_132505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_10_24_130416) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "color"
+    t.integer "user_id"
   end
 
   create_table "daily_balances", force: :cascade do |t|
@@ -51,7 +52,6 @@ ActiveRecord::Schema.define(version: 2019_10_24_130416) do
     t.string "img"
     t.string "header_image"
     t.string "remember_digest"
-    t.integer "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
