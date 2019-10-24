@@ -3,7 +3,7 @@
   基本情報の変更
 </div>
 <div class="row">
-  <%= render("setting_sidebar", settings: @settings_class, images: @images_class) %>
+  <%= render("setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
   <div class="col-md-6 settings-form">
     <%= form_for(@user, url: settings_update_path(@user)) do |f| %>
       <%= render("shared/error_messages") %>

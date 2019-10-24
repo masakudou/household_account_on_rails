@@ -1,0 +1,22 @@
+<% provide(:title, '収支カテゴリの追加') %>
+<div class="signup-title">
+  収支カテゴリの追加
+</div>
+<div class="row">
+  <%= render("setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
+  <div class="col-md-6 col-md-offset-3 signup-form">
+    <%= form_for(@category, url: category_create_path) do |f| %>
+      <%= render("shared/error_messages") %>
+
+      <%= f.label :name, "カテゴリ名(必須項目)"%>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :color, "カテゴリの色(必須項目)" %>
+      <%= f.text_field :color, class: "form-control" %>
+
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+
+      <%= f.submit "カテゴリの追加", class: "btn signup-button" %>
+    <% end %>
+  </div>
+</div>

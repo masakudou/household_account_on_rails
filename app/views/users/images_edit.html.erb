@@ -3,7 +3,7 @@
   プロフィール画像の変更
 </div>
 <div class="row">
-  <%= render("setting_sidebar", settings: @settings_class, images: @images_class) %>
+  <%= render("setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
   <div class="col-md-6 image-settings-form">
     <%= form_for(@user, url: images_update_path(@user), html: {id:"edit_user_image"}) do |f| %>
       <%= render("shared/error_messages") %>
