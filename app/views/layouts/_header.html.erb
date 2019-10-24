@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -19,7 +19,7 @@
             <li><%= link_to "設定", "/users/#{@current_user.id}/settings" %></li>
             <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>
-          <li class="navlist"><%= link_to "ログイン", "/login", class: "header-tohome" %></li>
+          <li class="navlist"><%= link_to "ログイン", "/login", class: "header-login" %></li>
         <% end %>
       </ul>
     </nav>
