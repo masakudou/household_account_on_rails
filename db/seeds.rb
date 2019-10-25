@@ -1,6 +1,13 @@
 # coding: utf-8
 
 User.create!(
+  name: "sample",
+  email: "sample@sample.com",
+  password: "samplesample",
+  password_confirmation: "samplesample"
+)
+
+User.create!(
   name: "mintia96",
   email: "wazap1121@gmail.com",
   password: "12345678",

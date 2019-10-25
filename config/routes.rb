@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  # 試用ユーザーへログインする
+  get "/sample_login", to: "sessions#sample_login"
 end

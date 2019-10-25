@@ -18,4 +18,11 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to(root_url)
   end
+
+  # アプリの試用のために実装
+  def sample_login
+    user = User.find(1)
+    log_in(user)
+    redirect_to(root_url)
+  end
 end
