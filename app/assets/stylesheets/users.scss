@@ -177,4 +177,40 @@
       color: white;
     }
   }
+
+  /* category-setting */
+  .category-setting-title {
+    margin: 40px 0 40px 0px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    background-color: #72d6c9;
+    border: 2px ridge #ffffff;
+    border-radius: 10px;
+    padding: 4px 15px 4px 15px;
+    width: 350px;
+  }
+
+  .category-setting-form {
+    color: #2b736a;
+
+    .form-control {
+      margin-bottom: 10px;
+    }
+
+    .category-setting-button {
+      margin-top: 20px;
+      font-size: 20px;
+      float: right;
+      padding: 5px 20px 5px 20px;
+      background-color: #72d6c9;
+      border-color: #7aeede;
+      color: white;
+      &:hover {
+        background-color: #7aeede;
+        border-color: #7aeede;
+        color: white;
+      }
+    }
+  }
 }

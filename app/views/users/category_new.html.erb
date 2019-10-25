@@ -1,10 +1,10 @@
 <% provide(:title, '収支カテゴリの追加') %>
-<div class="signup-title">
+<div class="category-setting-title">
   収支カテゴリの追加
 </div>
 <div class="row">
   <%= render("setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
-  <div class="col-md-6 col-md-offset-3 signup-form">
+  <div class="col-md-6 category-setting-form">
     <%= form_for(@category, url: category_create_path) do |f| %>
       <%= render("shared/error_messages") %>
 
@@ -16,7 +16,7 @@
 
       <%= f.hidden_field :user_id, :value => current_user.id %>
 
-      <%= f.submit "カテゴリの追加", class: "btn signup-button" %>
+      <%= f.submit "カテゴリの追加", class: "btn category-setting-button" %>
     <% end %>
   </div>
 </div>
