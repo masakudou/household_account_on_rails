@@ -8,13 +8,10 @@
   border: initial;
 }
 
-.navbar-inverse {
-  .navbar-nav {
-    li {
-      a {
-        color: white;
-      }
-    }
+.navbar-toggle {
+  border: 1px solid white;
+  .icon-bar {
+    background-color: white;
   }
 }
 
