@@ -3,9 +3,9 @@
   プロフィール画像の変更
 </div>
 <div class="row">
-  <%= render("setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
+  <%= render("shared/setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
   <div class="col-md-6 image-settings-form">
-    <%= form_for(@user, url: images_update_path(@user), html: {id:"edit_user_image"}) do |f| %>
+    <%= form_for(@user, url: user_images_path(@user), html: {id:"edit_user_image"}) do |f| %>
       <%= render("shared/error_messages") %>
 
       <%= f.label :header_image, "ヘッダー画像"%>
@@ -16,9 +16,9 @@
 
       <input type="button" value="設定の変更" name="commit" class="btn image-settings-update-button" data-disable-with="設定の変更" onClick="checkNilImages()" >
     <% end %>
-    <%= link_to "初期画像に戻す", images_reset_path(@user),
+    <%= link_to "初期画像に戻す", user_image_initializations_path(@user),
                                 class: "btn image-reset-button",
-                                method: :post,
+                                method: :patch,
                                 data: {confirm: "画像を初期状態に戻しますか？"} %>
   </div>
 </div>

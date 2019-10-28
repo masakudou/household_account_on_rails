@@ -16,7 +16,7 @@
       <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
         <% if logged_in? %>
             <li><%= link_to "プロフィール", @current_user %></li>
-            <li><%= link_to "設定", "/users/#{@current_user.id}/settings" %></li>
+            <li><%= link_to "設定", edit_user_path(@current_user) %></li>
             <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>
           <li class="navlist"><%= link_to "ログイン", "/login", class: "header-login" %></li>
