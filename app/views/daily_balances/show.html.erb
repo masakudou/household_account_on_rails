@@ -1,6 +1,6 @@
 <div class="daily-balances">
   <div class="record-date-title">
-    <%= "#{@daily_balance.user_name}さんの収支詳細 - #{@daily_balance.record_date.strftime("%Y年%m月%d日")}" %>
+    <%= "#{@user.name}さんの収支詳細 - #{@daily_balance.record_date.strftime("%Y年%m月%d日")}" %>
   </div>
   <div class="row">
     <!-- 収支合計額・グラフ表示部 -->
@@ -24,7 +24,7 @@
         カテゴリ別支出
       </div>
       <div class="categorized-exp-chart">
-        <%= pie_chart(*daily_expenditure_by_category(@daily_balance.user_id, @daily_balance.record_date)) %>
+        <%= pie_chart(*daily_expenditure_by_category(@user.id, @daily_balance.record_date)) %>
       </div>
     </div>
     <!-- 収支レコードリスト -->

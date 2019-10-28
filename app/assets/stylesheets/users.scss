@@ -1,3 +1,38 @@
+/* setting sidebar */
+.settings-sidebar {
+  padding: 10px 0;
+
+  .list-group-item {
+    margin: 5px 16px;
+    color: white;
+    font-size: 18px;
+    border: 2px ridge white;
+    border-radius: 10px;
+    background-color: #72d5c9;
+    &:hover {
+      background-color: #7aeede;
+      color: white;
+    }
+  }
+
+  .active {
+    background-color: #7aeede;
+  }
+}
+
+/* setting title */
+.settings-title {
+  margin: 40px 0 40px 0px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  background-color: #72d6c9;
+  border: 2px ridge #ffffff;
+  border-radius: 10px;
+  padding: 4px 15px 4px 15px;
+  width: 350px;
+}
+
 /* default tag styles for users */
 .users {
   padding: 60px 0;
@@ -84,39 +119,6 @@
   }
 
   /* settings */
-  .settings-title {
-    margin: 40px 0 40px 0px;
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    background-color: #72d6c9;
-    border: 2px ridge #ffffff;
-    border-radius: 10px;
-    padding: 4px 15px 4px 15px;
-    width: 350px;
-  }
-
-  .settings-sidebar {
-    padding: 10px 0;
-
-    .list-group-item {
-      margin: 5px 16px;
-      color: white;
-      font-size: 18px;
-      border: 2px ridge white;
-      border-radius: 10px;
-      background-color: #72d5c9;
-      &:hover {
-        background-color: #7aeede;
-        color: white;
-      }
-    }
-
-    .active {
-      background-color: #7aeede;
-    }
-  }
-
   .settings-form {
     color: #2b736a;
 
@@ -139,7 +141,10 @@
       }
     }
   }
+}
 
+/* Users::Image */
+.images {
   .image-settings-form {
     color: #2b736a;
 
@@ -177,7 +182,10 @@
       color: white;
     }
   }
+}
 
+/**/
+.self_categories {
   /* category-setting */
   .category-setting-title {
     margin: 40px 0 40px 0px;

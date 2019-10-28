@@ -9,20 +9,15 @@ Rails.application.routes.draw do
   # users
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
-  get "/users/:id/settings", to: "users#settings_edit", as: "settings_edit"
-  patch "/users/:id/settings", to: "users#settings_update", as: "settings_update"
-  get "/users/:id/settings/images", to: "users#images_edit", as: "images_edit"
-  patch "/users/:id/settings/images", to: "users#images_update", as: "images_update"
-  post "/users/:id/settings/images", to: "users#images_reset", as: "images_reset"
-  get "/users/:id/settings/category", to: "users#category_new", as: "category_new"
-  post "/users/:id/settings/category", to: "users#category_create", as: "category_create"
-  resources :users, only: [:new, :create, :show, :destroy]
-  resources :users do
-    resources :daily_balances, only: [:show]
+  resources :users, only: %i[new create edit update] do
+    resources :daily_balances, only: :show, param: :record_date
+    resource :images, only: %i[edit update], module: :users
+    resource :image_initializations, only: :update, module: :users
+    resource :self_categories, only: %i[new create], module: :users
   end
 
   # book_records
-  resources :book_records, only: [:create, :destroy]
+  resources :book_records, only: %i[create destroy]
 
   # sessions
   get "/login", to: "sessions#new"

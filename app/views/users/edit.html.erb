@@ -3,9 +3,9 @@
   基本情報の変更
 </div>
 <div class="row">
-  <%= render("setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
+  <%= render("shared/setting_sidebar", settings: @settings_class, images: @images_class, category: @category_class) %>
   <div class="col-md-6 settings-form">
-    <%= form_for(@user, url: settings_update_path(@user)) do |f| %>
+    <%= form_for(@user, url: user_path(@user)) do |f| %>
       <%= render("shared/error_messages") %>
 
       <%= f.label :name, "ユーザー名"%>
