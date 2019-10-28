@@ -4,13 +4,11 @@ module StaticPagesHelper
     current_month_records = DailyBalance.where(user_id: user.id, record_date: Time.zone.now.in_time_zone.all_month)
     sum = 0
     current_month_records.each do |record|
-      if direction.zero?
-        sum += record.expenditure
-      else
-        sum += record.income
-      end
+      sum += if direction.zero?
+               record.expenditure
+             else
+               record.income
+             end
     end
-
-    sum
   end
 end

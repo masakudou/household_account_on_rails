@@ -29,7 +29,7 @@ module ApplicationHelper
       parameter.delete_at(-1)
     end
 
-    return parameters, colors
+    [parameters, colors]
   end
 
   # 支出額が0であるカテゴリのパラメーターは削除する

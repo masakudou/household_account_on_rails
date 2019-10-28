@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:settings_edit, :settings_update,
-                                        :images_edit, :images_update, :images_reset,
-                                        :category_new, :category_create]
-  before_action :correct_user, only: [:settings_edit, :settings_update,
-                                      :images_edit, :images_update, :images_reset,
-                                      :category_new, :category_create]
+  before_action :logged_in_user, only: %i[settings_edit settings_update
+                                          images_edit images_update images_reset
+                                          category_new category_create]
+  before_action :correct_user, only: %i[settings_edit settings_update
+                                        images_edit images_update images_reset
+                                        category_new category_create]
 
   def show
     @user = User.find_by(id: params[:id])
