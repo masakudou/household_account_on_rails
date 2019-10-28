@@ -2,10 +2,6 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: %i[edit update]
   before_action :correct_user, only: %i[edit update]
 
-  def show
-    @user = User.find_by(id: params[:id])
-  end
-
   def new
     @user = User.new
   end
