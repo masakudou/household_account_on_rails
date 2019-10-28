@@ -5,7 +5,7 @@
   <% balances.each do |balance| %>
     <div class="simple-calendar-date">
       <% if !empty_daily_balance?(balance) %>
-        <%= link_to "", user_daily_balance_url(user, balance) %>
+        <%= link_to "", user_daily_balance_url(user, balance.record_date) %>
         <div class="amount-expenditure">
           支出: ¥<%= balance.expenditure %>
         </div>

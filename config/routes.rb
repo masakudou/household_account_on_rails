@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post "/users/:id/settings/category", to: "users#category_create", as: "category_create"
   resources :users, only: [:new, :create, :show, :destroy]
   resources :users do
-    resources :daily_balances, only: [:show]
+    resources :daily_balances, only: [:show], param: :record_date
   end
 
   # book_records

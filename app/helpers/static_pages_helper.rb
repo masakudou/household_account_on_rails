@@ -10,5 +10,7 @@ module StaticPagesHelper
                record.income
              end
     end
+
+    sum
   end
 end
