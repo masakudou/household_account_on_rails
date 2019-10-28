@@ -4,11 +4,6 @@ module DailyBalancesHelper
     return true if daily_balance.expenditure.zero? && daily_balance.income.zero?
   end
 
-  # ユーザーIDとからUserレコードを取り出す
-  def get_user(user_id)
-    User.find(user_id)
-  end
-
   # 日付とユーザーIDが合致するBookRecordレコードを全て取得する
   def get_book_records(user_id, date)
     BookRecord.where(user_id: user_id, record_date: date)

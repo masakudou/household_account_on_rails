@@ -8,4 +8,10 @@ class DailyBalance < ApplicationRecord
   def expenditure_income_hashed
     { "収入" => income, "支出" => expenditure }
   end
+
+  # 実際にはメンバ変数ではないが、メンバ変数のように振舞うメソッド
+  # ex. daily_balance.user_name => "sample_user"
+  def user_name
+    User.find_by(id: user_id).name
+  end
 end
