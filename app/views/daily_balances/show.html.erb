@@ -1,6 +1,6 @@
 <div class="daily-balances">
   <div class="record-date-title">
-    <%= "#{get_user(@daily_balance.user_id).name}さんの収支詳細 - #{@daily_balance.record_date.strftime("%Y年%m月%d日")}" %>
+    <%= "#{@daily_balance.user_name}さんの収支詳細 - #{@daily_balance.record_date.strftime("%Y年%m月%d日")}" %>
   </div>
   <div class="row">
     <!-- 収支合計額・グラフ表示部 -->
@@ -35,7 +35,7 @@
             <% if record.direction.zero? %>
               <div class="daily-expenditure">
                 <div class="expenditure-category">
-                  <%= "カテゴリ: #{get_category_name(record.category)}" %><span style="color:<%= get_category_color(record.category) %>">■</span>
+                  <%= "カテゴリ: #{record.category_name}" %><span style="color:<%= record.category_color %>">■</span>
                 </div>
                 <div class="comment">
                   <%= record.comment %>
@@ -52,7 +52,7 @@
             <% else %>
               <div class="daily-income">
                 <div class="income-category">
-                  <%= "カテゴリ: #{get_category_name(record.category)}" %><span style="color:<%= get_category_color(record.category) %>">■</span>
+                  <%= "カテゴリ: #{record.category_name}" %><span style="color:<%= record.category_color %>">■</span>
                 </div>
                 <div class="comment">
                   <%= record.comment %>

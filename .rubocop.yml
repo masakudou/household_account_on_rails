@@ -1,0 +1,57 @@
+# 文字列リテラルを不変にするマジックコメントを必須にしない
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# 複数行での「lambda」で「->」による省略記法を許可
+Lambda:
+  Enabled: false
+
+LineLength:
+  Max: 120
+
+AbcSize:
+  Max: 25
+
+MethodLength:
+  Max: 25
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# double quote
+StringLiterals:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+#::を許可
+ColonMethodCall:
+  Enabled: false
+
+# クラスにコメントを残さない
+Documentation:
+  Enabled: false
+
+# 「and」「or」の使用を許可
+AndOr:
+  Enabled: false
+
+MutableConstant:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - config/unicorn.rb
+    - config/unicorn_staging.rb
+    - tmp/**/*

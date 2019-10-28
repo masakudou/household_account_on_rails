@@ -1,23 +1,7 @@
 module DailyBalancesHelper
-  # 該当するIDのカテゴリがない場合は未分類として返す
-  def get_category_name(category_id)
-    category = Category.find_by(id: category_id)
-    category.nil? ? "未分類" : category.name
-  end
-
-  def get_category_color(category_id)
-    category = Category.find_by(id: category_id)
-    category.nil? ? "#BBBBBB" : category.color
-  end
-
   # 支出と収入が共に0であれば真
   def empty_daily_balance?(daily_balance)
     return true if daily_balance.expenditure.zero? && daily_balance.income.zero?
-  end
-
-  # ユーザーIDとからUserレコードを取り出す
-  def get_user(user_id)
-    User.find(user_id)
   end
 
   # 日付とユーザーIDが合致するBookRecordレコードを全て取得する
@@ -47,6 +31,6 @@ module DailyBalancesHelper
     parameters = delete_if_amount_is_zero(parameters)
     parameters, colors = separate_color_column(parameters)
 
-    return [parameters, colors: colors, messages: { empty: "データがありません。" }]
+    [parameters, colors: colors, messages: { empty: "データがありません。" }]
   end
 end
