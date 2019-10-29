@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe BookRecord, type: :model do
+  # test category
+  let(:category_name) { "sample" }
+  let(:category_color) { "#FFFFFF" }
+  let(:category_user_id) { 0 }
+  let(:category_instance) { Category.create(name: category_name, color: category_color, user_id: category_user_id) }
+
   # test user
   let(:name) { "example_user" }
   let(:email) { "example@example.com" }
@@ -130,6 +136,19 @@ RSpec.describe BookRecord, type: :model do
 
       it "does not pass." do
         is_expected.to be_falsey
+      end
+    end
+  end
+
+  # クラスメソッド
+  describe "Category name from category ID of instance" do
+    subject { book_record.category_name }
+
+    context "when executed 'category_name' method of BookRecord model" do
+      let(:category) { 1 }
+
+      it "has correctly got." do
+        is_expected.to eq "sample"
       end
     end
   end
