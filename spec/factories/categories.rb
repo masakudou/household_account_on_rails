@@ -1,19 +1,7 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :category do
-    name "sample1"
-    color "#FFFFFF"
-    user_id 0
-  end
-
-  factory :category do
-    name "sample2"
-    color "#EEEEEE"
-    user_id 1
-  end
-
-  factory :category do
-    name "sample3"
-    color "#DDDDDD"
-    user_id 1
+    sequence(:name) { |n| "test_user_#{n}" }
+    sequence(:color) { |n| "#FFFFF#{n}" }
+    user_id { 0 }
   end
 end
