@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe BookRecord, type: :model do
-  # test category
-  let(:category_name) { "sample" }
-  let(:category_color) { "#FFFFFF" }
-  let(:category_user_id) { 0 }
-  let(:category_instance) { Category.create(name: category_name, color: category_color, user_id: category_user_id) }
-
   # test user
   let(:name) { "example_user" }
   let(:email) { "example@example.com" }
