@@ -24,6 +24,8 @@
     - Ruby on Rails 5.2.3
   - DB Server
     - PostgreSql
+  - DB GUI
+    - pgweb
 
 - Test Framework: Rspec
 - Cloud Service: heroku
