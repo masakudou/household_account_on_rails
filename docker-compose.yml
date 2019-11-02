@@ -7,7 +7,6 @@ services:
 
   postgres-gui:
     image: donnex/pgweb
-    command: -s --bind=0.0.0.0 --listen=8080 --url postgresql://postgres@db/household_account_on_rails_development?sslmode=disable
     ports:
       - "8080:8080"
     depends_on:

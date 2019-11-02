@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe BookRecord, type: :model do
-  let(:test_user) { create(:user) }
+  let!(:test_user) { create(:user) }
 
   # 各パラメータに問題がなければ、BookRecordモデルのインスタンスが有効になる。
   describe "An instance of the BookRecord model" do
