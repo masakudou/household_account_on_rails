@@ -15,7 +15,6 @@ RSpec.feature "CreateSelfCategories", type: :feature do
     click_on "収支カテゴリの追加"
     # フォームに入力
     fill_in "category_name", with: "test_category"
-    fill_in "category_color", with: "#123456"
     # 設定の変更
     click_button "カテゴリの追加"
     # フラッシュメッセージを確認する
