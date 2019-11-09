@@ -29,4 +29,4 @@
 
 - Test Framework: Rspec
 - Cloud Service: heroku
-  - Deployed App link: https://infinite-fjord-28667.herokuapp.com/
+  - Deployed App link: https://household-account-app.herokuapp.com/
