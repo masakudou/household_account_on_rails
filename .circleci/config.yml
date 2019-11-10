@@ -1,85 +1,50 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
 version: 2
 jobs:
-  rubocop:
-    docker:
-      # https://hub.docker.com/r/circleci/ruby/tags/ から使うイメージを選ぶ
-      # Gemfileと同じバージョンでないとFailedする
-      - image: circleci/ruby:2.6.3-node-browsers-legacy
-        environment:
-          # 環境指定
-          RAILS_ENV: test
-          # Service container image available at `host: localhost`
-          # POSTGRES_HOST: 127.0.0.1
-      # https://hub.docker.com/r/circleci/postgres から使うイメージを選ぶ
-      - image: circleci/postgres:11.5
-        environment:
-          # config/database.ymlの値を入力
-          POSTGRES_USER: postgres
-          POSTGRES_DB: household_account_on_rails_test
-    working_directory: ~/repo
+  rubocop_docker_compose:
+    machine:
+      image: circleci/classic:edge
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run: yarn install
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      # Rubocop
       - run:
-          name: Rubocop
-          command: bundle exec rubocop
-
-  rspec:
-    docker:
-      # https://hub.docker.com/r/circleci/ruby/tags/ から使うイメージを選ぶ
-      - image: circleci/ruby:2.6.3-node-browsers-legacy
-        environment:
-          # 環境指定
-          RAILS_ENV: test
-          # Service container image available at `host: localhost`
-          # POSTGRES_HOST: 127.0.0.1
-      # https://hub.docker.com/r/circleci/postgres から使うイメージを選ぶ
-      - image: circleci/postgres:11.5
-        environment:
-          # config/database.ymlの値を入力
-          POSTGRES_USER: postgres
-          POSTGRES_DB: household_account_on_rails_test
-    working_directory: ~/repo
+          name: docker-compose build
+          command: docker-compose build
+      - run:
+          name: docker-compose up
+          command: docker-compose up -d
+      - run:
+          name: rspec
+          command: docker-compose run web rubocop
+      - run:
+          name: docker-compose down
+          command: docker-compose down
+  rspec_docker_compose:
+    machine:
+      image: circleci/classic:edge
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run: yarn install
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run: bundle exec rails db:create
-      - run: bundle exec rails db:schema:load
-      # Rspec
       - run:
-          name: Rspec
-          command: bundle exec rspec
-
+          name: docker-compose build
+          command: docker-compose build
+      - run:
+          name: docker-compose up
+          command: docker-compose up -d
+      - run:
+          name: sleep for waiting launch db
+          command: sleep 1
+      - run:
+          name: "before_test: setup db"
+          command: docker-compose run web rails db:create db:migrate
+      - run:
+          name: rspec
+          command: docker-compose run web rspec
+      - run:
+          name: docker-compose down
+          command: docker-compose down
 workflows:
   version: 2
-  rubocop_rspec:
+  rubocop_and_rspec:
     jobs:
-      - rubocop
-      - rspec:
+      - rubocop_docker_compose
+      - rspec_docker_compose:
           requires:
-            - rubocop
+            - rubocop_docker_compose
