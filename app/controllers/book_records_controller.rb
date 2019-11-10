@@ -3,7 +3,7 @@ class BookRecordsController < ApplicationController
   def create
     @book_record = current_user.book_records.build(book_record_params)
     if @book_record.save
-      set_daily_balance(@book_record)
+      update_daily_balance(@book_record)
       flash[:success] = "新しい収支が記録されました！"
       redirect_to(root_url)
     else
@@ -31,7 +31,7 @@ class BookRecordsController < ApplicationController
   # 一方、該当するユーザーと日付のレコードがDailyBalanceモデル上に存在する場合は、既に存在するレコードの収支を今回登録する収支データの値で更新する。
   # HACK: 構造上、User.DailyBalance.BookRecordという形にできると思われるが、simple_calendarにおいてはDailyBalanceモデルをBookRecordモデルとは独立して
   #       持っていた方が書きやすい。
-  def set_daily_balance(book_record)
+  def update_daily_balance(book_record)
     daily_balance = current_user.daily_balances.find_by(record_date: book_record.record_date)
     if daily_balance.nil?
       daily_balance = current_user.daily_balances.build(expenditure: 0, income: 0, record_date: book_record.record_date)
