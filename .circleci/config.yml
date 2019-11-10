@@ -13,7 +13,7 @@ jobs:
           # 環境指定
           RAILS_ENV: test
           # Service container image available at `host: localhost`
-          POSTGRES_HOST: 127.0.0.1
+          POSTGRES_HOST: db
       # https://hub.docker.com/r/circleci/postgres から使うイメージを選ぶ
       - image: circleci/postgres:11.5
         environment:
@@ -47,7 +47,7 @@ jobs:
           # 環境指定
           RAILS_ENV: test
           # Service container image available at `host: localhost`
-          POSTGRES_HOST: 127.0.0.1
+          POSTGRES_HOST: db
       # https://hub.docker.com/r/circleci/postgres から使うイメージを選ぶ
       - image: circleci/postgres:11.5
         environment:
