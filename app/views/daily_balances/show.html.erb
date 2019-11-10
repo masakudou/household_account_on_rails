@@ -30,7 +30,7 @@
     <!-- 収支レコードリスト -->
     <div class="col-md-8">
       <ul class="book_record-list list-group">
-        <% get_book_records(@daily_balance.user_id, @daily_balance.record_date).each do |record| %>
+        <% extract_book_records(@daily_balance.user_id, @daily_balance.record_date).each do |record| %>
           <li class="book-record-element list-group-item">
             <% if record.direction.zero? %>
               <div class="daily-expenditure">

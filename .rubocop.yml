@@ -2,55 +2,57 @@
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 空メソッドを許可する(コントローラーで警告が出るのが煩わしいため)
 Style/EmptyMethod:
   Enabled: false
 
 # 日本語でのコメントを許可
-AsciiComments:
+Style/AsciiComments:
   Enabled: false
 
 # 複数行での「lambda」で「->」による省略記法を許可
-Lambda:
+Style/Lambda:
   Enabled: false
 
-LineLength:
+# 行長
+Metrics/LineLength:
   Max: 120
 
-AbcSize:
+# 許容するABC(http://wiki.c2.com/?AbcMetric)の点数
+Metrics/AbcSize:
   Max: 25
 
-MethodLength:
+# 許容メソッド行数
+Metrics/MethodLength:
   Max: 25
 
 # モジュール名::クラス名の定義を許可
-ClassAndModuleChildren:
+Style/ClassAndModuleChildren:
   Enabled: false
 
 # double quote
-StringLiterals:
+Style/StringLiterals:
   Enabled: false
 
-# メソッド名のprefixに「set_」「get_」を許可
-AccessorMethodName:
-  Enabled: false
-
-#::を許可
-ColonMethodCall:
+# ::を許可
+Style/ColonMethodCall:
   Enabled: false
 
 # クラスにコメントを残さない
-Documentation:
+Style/Documentation:
   Enabled: false
 
 # 「and」「or」の使用を許可
-AndOr:
+Style/AndOr:
   Enabled: false
 
-MutableConstant:
+Style/MutableConstant:
   Enabled: false
 
 AllCops:
+  TargetRubyVersion: 2.5.1
   Exclude:
+    - 'vendor/**/*'
     - db/schema.rb
     - config/unicorn.rb
     - config/unicorn_staging.rb

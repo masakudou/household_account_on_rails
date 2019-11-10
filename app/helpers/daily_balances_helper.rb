@@ -5,7 +5,7 @@ module DailyBalancesHelper
   end
 
   # 日付とユーザーIDが合致するBookRecordレコードを全て取得する
-  def get_book_records(user_id, date)
+  def extract_book_records(user_id, date)
     BookRecord.where(user_id: user_id, record_date: date)
   end
 
