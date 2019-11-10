@@ -13,7 +13,7 @@ jobs:
           # 環境指定
           RAILS_ENV: test
           # Service container image available at `host: localhost`
-          POSTGRES_HOST: 127.0.0.1
+          # POSTGRES_HOST: 127.0.0.1
       # https://hub.docker.com/r/circleci/postgres から使うイメージを選ぶ
       - image: circleci/postgres:11.5
         environment:
@@ -47,7 +47,7 @@ jobs:
           # 環境指定
           RAILS_ENV: test
           # Service container image available at `host: localhost`
-          POSTGRES_HOST: 127.0.0.1
+          # POSTGRES_HOST: 127.0.0.1
       # https://hub.docker.com/r/circleci/postgres から使うイメージを選ぶ
       - image: circleci/postgres:11.5
         environment:
@@ -68,15 +68,6 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      # dbの起動を待つための処理を入れる
-      - run:
-        name: install dockerize
-        command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-        environment:
-        DOCKERIZE_VERSION: v0.3.0
-      - run:
-        name: Wait for db
-        command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       # Rspec
