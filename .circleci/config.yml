@@ -7,7 +7,8 @@ jobs:
   rubocop:
     docker:
       # https://hub.docker.com/r/circleci/ruby/tags/ から使うイメージを選ぶ
-      - image: circleci/ruby:2.6.4-node-browsers-legacy
+      # Gemfileと同じバージョンでないとFailedする
+      - image: circleci/ruby:2.6.3-node-browsers-legacy
         environment:
           # 環境指定
           RAILS_ENV: test
@@ -41,7 +42,7 @@ jobs:
   rspec:
     docker:
       # https://hub.docker.com/r/circleci/ruby/tags/ から使うイメージを選ぶ
-      - image: circleci/ruby:2.6.4-node-browsers-legacy
+      - image: circleci/ruby:2.6.3-node-browsers-legacy
         environment:
           # 環境指定
           RAILS_ENV: test
