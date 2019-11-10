@@ -26,6 +26,8 @@
     - PostgreSql
   - DB GUI
     - pgweb
+  - CI/CD
+    - CircleCI
 
 - Test Framework: Rspec
 - Cloud Service: heroku

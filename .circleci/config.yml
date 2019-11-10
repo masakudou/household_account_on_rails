@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  rubocop_docker_compose:
+  rubocop_and_rspec:
     machine:
       image: circleci/classic:edge
     steps:
@@ -12,22 +12,8 @@ jobs:
           name: docker-compose up
           command: docker-compose up -d
       - run:
-          name: rspec
+          name: rubocop
           command: docker-compose run web rubocop
-      - run:
-          name: docker-compose down
-          command: docker-compose down
-  rspec_docker_compose:
-    machine:
-      image: circleci/classic:edge
-    steps:
-      - checkout
-      - run:
-          name: docker-compose build
-          command: docker-compose build
-      - run:
-          name: docker-compose up
-          command: docker-compose up -d
       - run:
           name: sleep for waiting launch db
           command: sleep 1
@@ -44,7 +30,4 @@ workflows:
   version: 2
   rubocop_and_rspec:
     jobs:
-      - rubocop_docker_compose
-      - rspec_docker_compose:
-          requires:
-            - rubocop_docker_compose
+      - rubocop_and_rspec
