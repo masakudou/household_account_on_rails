@@ -9,6 +9,6 @@ class CreateBookRecords < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :book_records, [:user_id, :record_date]
+    add_index :book_records, %i[user_id record_date]
   end
 end

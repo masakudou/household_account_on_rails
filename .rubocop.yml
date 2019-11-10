@@ -14,6 +14,11 @@ Style/AsciiComments:
 Style/Lambda:
   Enabled: false
 
+# binフォルダを例外にする: includeは文頭に書く
+Style/MixinUsage:
+  Exclude:
+    - 'bin/**/*'
+
 # 行長
 Metrics/LineLength:
   Max: 120
@@ -25,6 +30,11 @@ Metrics/AbcSize:
 # 許容メソッド行数
 Metrics/MethodLength:
   Max: 25
+
+# Rspecだけブロック長の制限を解除
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
 
 # モジュール名::クラス名の定義を許可
 Style/ClassAndModuleChildren:

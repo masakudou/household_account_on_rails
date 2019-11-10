@@ -1,5 +1,3 @@
-# coding: utf-8
-
 User.create!(
   name: "sample",
   email: "sample@sample.com",
