@@ -2,6 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: db
+  # TODO:この情報は何かしらの方法を使って隠蔽する。
   username: postgres
   password:
   pool: 5
