@@ -13,10 +13,6 @@
 
 - 統計機能
 
-### 未実装
-
-- 毎月の固定収支の登録機能
-
 ## 使用した技術
 - Container: Docker for Mac
   - Web Application Server
@@ -32,3 +28,6 @@
 - Test Framework: Rspec
 - Cloud Service: heroku
   - Deployed App link: https://household-account-app.herokuapp.com/
+  
+## 履歴
+・2019/11/24 初版完成。
