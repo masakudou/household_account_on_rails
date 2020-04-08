@@ -27,7 +27,7 @@
 
 - Test Framework: Rspec
 - Cloud Service: heroku
-  - Deployed App link: https://household-account-app.herokuapp.com/
+  - Deployed App link: ~~https://household-account-app.herokuapp.com/~~
   
 ## 履歴
 ・2019/11/24 初版完成。
