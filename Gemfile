@@ -34,7 +34,7 @@ gem 'bootsnap', '1.4.5', require: false
 # Calendar at /home
 gem 'simple_calendar', '2.3.0'
 # Create graph
-gem 'chartkick', '3.3.0'
+gem 'chartkick', '3.4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
